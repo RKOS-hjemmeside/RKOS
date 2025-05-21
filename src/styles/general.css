@@ -1,0 +1,71 @@
+/* GENERAL STYLING */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+}
+
+body {
+  margin-inline: auto;
+  background-color: var(--mine-shaft50);
+}
+
+/* colors */
+:root {
+  --red700: #e60000;
+  --red800: #af0505;
+  --red900: #900c0c;
+  --mine-shaft50: #f6f6f5;
+  --mine-shaft100: #e7e7e6;
+  --mine-shaft300: #b1b0af;
+  --mine-shaft900: #3d3d3c;
+  --mine-shaft950: #2b2b2a;
+  --spring-wood50: #f9f6f2;
+}
+
+/* fonts */
+h1 {
+  font-family: "oswald", sans-serif;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: "oswald", sans-serif;
+  font-weight: 400;
+}
+
+p {
+  font-family: futura-pt, sans-serif;
+}
+
+@media (min-width: 900px) {
+  h1 {
+    font-size: 70px;
+  }
+
+  h2 {
+    font-size: 58px;
+  }
+
+  p {
+    font-size: 28px;
+  }
+}
+
+/* margins */
