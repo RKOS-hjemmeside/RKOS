@@ -1,9 +1,9 @@
 ---
 import Menu from "../components/Menu.astro";
+import HoldCard from "../components/HoldCard.astro";
 import Offert from "../components/Offert.astro";
-import Card from "../components/Card.astro";
-import Citation from "../components/Citation.astro";
-import Kanku from "../components/Kanku.astro";
+import Senpai from "../components/Senpai.astro";
+import Prices from "../components/Prices.astro";
 import Footer from "../components/Footer.astro";
 ---
 
@@ -13,7 +13,7 @@ import Footer from "../components/Footer.astro";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
-    <title>Hjem</title>
+    <title>Hold</title>
     <link rel="stylesheet" href="https://use.typekit.net/uap2ixo.css" />
     <link rel="stylesheet" href="src/styles/general.css" />
   </head>
@@ -21,12 +21,13 @@ import Footer from "../components/Footer.astro";
   <body>
     <!-- components -->
     <Menu />
+    <HoldCard />
+    <HoldCard />
+    <HoldCard />
     <Offert />
-    <Card />
-    <Card />
-    <Card />
-    <Citation />
-    <Kanku />
+    <Senpai />
+    <Senpai />
+    <Prices />
     <Footer />
   </body>
 </html>
