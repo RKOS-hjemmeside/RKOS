@@ -1,4 +1,6 @@
 ---
+import "../styles/general.css";
+import "../styles/om-os.css";
 import Menu from "../components/Menu.astro";
 import Map from "../components/Map.astro";
 import Footer from "../components/Footer.astro";
@@ -12,8 +14,6 @@ import Footer from "../components/Footer.astro";
     <meta name="description" content="" />
     <title>Om os</title>
     <link rel="stylesheet" href="https://use.typekit.net/uap2ixo.css" />
-    <link rel="stylesheet" href="src/styles/general.css" />
-    <link rel="stylesheet" href="src/styles/om-os.css" />
   </head>
 
   <body>
@@ -32,17 +32,17 @@ import Footer from "../components/Footer.astro";
           <h2>2</h2>
           <p>hold</p>
         </div>
-        <div class="divider"></div>
+        <div class="line"></div>
         <div class="grid-item">
           <h2>2</h2>
           <p>trænere</p>
         </div>
-        <div class="divider"></div>
+        <div class="line"></div>
         <div class="grid-item">
           <h2>20+</h2>
           <p>medlemmer</p>
         </div>
-        <div class="divider"></div>
+        <div class="line"></div>
         <div class="grid-item">
           <h2>40+</h2>
           <p>års erfaring</p>
@@ -50,27 +50,27 @@ import Footer from "../components/Footer.astro";
       </div>
       <img class="group-img" src="/imgs/gruppe-img.webp" alt="Gruppe billede" />
     </article>
-    <article class="kanku-grid">
-      <div>
+    <article class="values-grid">
+      <div class="value disciplin">
         <h2>Disciplin</h2>
         <p>Karate lærer os at holde fokus, vise respekt, yde vores bedste, også når det er hårdt. Disciplin er noget vi træner, og noget vi tager med os videre i livet.</p>
       </div>
-      <div>
+      <div class="value fælleskab">
         <h2>Fælleskab</h2>
         <p>Vi løfter hinanden uanset alder, niveau eller erfaring. Hos os er der plads til grin, kammeratskab og støtte, både på og af måtten.</p>
       </div>
       <img class="kanku-logo" src="/imgs/kanku-stort.webp" alt="Kanku Kyokushin ikon" />
-      <div>
+      <div class="value osu">
         <h2>Osu</h2>
         <p>Et ord med mange betydninger: Vilje, respekt og udholdenhed. Når vi siger "Osu", minder vi hinanden om at møde modstand med styrke og respekt.</p>
       </div>
-      <div>
+      <div class="value for-alle">
         <h2>Et sted for alle</h2>
         <p>Uanset om du er barn, voksen, nybegynder eller erfaren, er du velkommen. Vi tror på, at forskellighed gør os stærkere.</p>
       </div>
     </article>
-    <article>
-      <h2>Her ligger vi</h2>
+    <article class="map">
+      <h1>Her ligger vi</h1>
       <Map />
     </article>
     <article class="karate-ordbog">

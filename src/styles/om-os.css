@@ -9,21 +9,40 @@
   text-align: center;
   justify-content: center;
   align-items: center;
+  padding: var(--s);
 }
 
 .grid-item {
   padding: 0 16px;
 }
 
-.divider {
+.line {
   width: 1px;
   height: 30px;
   background-color: var(--mine-shaft300);
 }
 
+.values-grid {
+  padding: var(--l);
+  display: grid;
+  text-align: center;
+}
+
+.value {
+  margin-bottom: 20px;
+}
+
 .kanku-logo {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
+  justify-self: center;
+  align-self: center;
+  margin: 25px;
+}
+
+.map {
+  display: grid;
+  text-align: center;
 }
 
 .icon {
@@ -37,7 +56,6 @@
   }
 }
 
-/* padding */
 @media (min-width: 900px) {
   .intro,
   .values-grid,
@@ -45,9 +63,30 @@
     padding: var(--M);
   }
 
+  .grid_1-1-1-1 {
+    padding: var(--S);
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
   .kanku-logo {
-    width: 272px;
-    height: 272px;
+    width: 200px;
+    height: 200px;
+    margin: 50px;
+    grid-row: 2/3;
+  }
+
+  .disciplin,
+  .for-alle {
+    grid-column: 2/3;
+  }
+
+  .fælleskab,
+  .osu {
+    grid-row: 2/3;
   }
 
   .icon {

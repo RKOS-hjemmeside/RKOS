@@ -23,14 +23,13 @@ main {
 
 body {
   margin-inline: auto;
-  background-color: var(--mine-shaft50);
+  background-color: var(--spring-wood50);
 }
 
 /* colors */
 :root {
   --red700: #e60000;
   --red800: #af0505;
-  --red900: #900c0c;
   --mine-shaft50: #f6f6f5;
   --mine-shaft100: #e7e7e6;
   --mine-shaft300: #b1b0af;
@@ -44,16 +43,12 @@ body {
   /* mobil */
   --s: 20px;
   --m: 40px;
-  --l: 70px;
+  --l: 105px;
 
   /* desktop */
   --S: 55px;
-  --M: 146px;
-  --L: 203px;
-}
-
-article {
-  margin-bottom: var(--m);
+  --M: 110px;
+  --L: 146px;
 }
 
 h1 {
@@ -76,6 +71,13 @@ p {
   font-family: futura-pt, sans-serif;
 }
 
+a {
+  font-family: "oswald", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  text-decoration: none;
+}
+
 @media (min-width: 900px) {
   h1 {
     font-size: 70px;
@@ -91,9 +93,5 @@ p {
 
   p {
     font-size: 28px;
-  }
-
-  article {
-    margin-bottom: var(--M);
   }
 }
