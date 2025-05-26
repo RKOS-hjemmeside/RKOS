@@ -15,17 +15,33 @@
   background-color: var(--mine-shaft300);
 }
 
+.kanku-logo {
+  width: 150px;
+  height: 150px;
+}
+
 @media (min-width: 720px) {
   .stat-item {
     padding: 0 65px;
   }
 }
 
+/* padding */
 @media (min-width: 900px) {
   .intro,
   .group-img,
   .values-grid,
   .karate-ordbog {
     padding: var(--M);
+  }
+
+  .kanku-logo {
+    width: 272px;
+    height: 272px;
+  }
+
+  .icon {
+    width: 126px;
+    height: 126px;
   }
 }
