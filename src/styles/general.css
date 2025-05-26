@@ -39,7 +39,23 @@ body {
   --spring-wood50: #f9f6f2;
 }
 
-/* fonts */
+/* margins/paddings & fonts */
+:root {
+  /* mobil */
+  --s: 40px;
+  --m: 70px;
+  --l: 100px;
+
+  /* desktop */
+  --S: 55px;
+  --M: 146px;
+  --L: 203px;
+}
+
+article {
+  margin-bottom: var(--m);
+}
+
 h1 {
   font-family: "oswald", sans-serif;
   font-weight: 700;
@@ -76,17 +92,8 @@ p {
   p {
     font-size: 28px;
   }
-}
 
-/* margins */
-:root {
-  /* mobil */
-  /* --s: px;
-  --m: px;
-  --l: px; */
-
-  /* desktop */
-  --S: 55px;
-  --M: 146px;
-  --L: 203px;
+  article {
+    margin-bottom: var(--M);
+  }
 }
