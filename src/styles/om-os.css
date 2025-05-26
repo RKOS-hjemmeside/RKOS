@@ -1,11 +1,11 @@
-.stats-grid {
+.grid_1-1-1-1 {
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
 }
 
-.stat-item {
+.grid-item {
   padding: 0 25px;
 }
 
@@ -26,7 +26,7 @@
 }
 
 @media (min-width: 720px) {
-  .stat-item {
+  .grid-item {
     padding: 0 65px;
   }
 }
