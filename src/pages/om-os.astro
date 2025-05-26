@@ -13,13 +13,14 @@ import Footer from "../components/Footer.astro";
     <title>Om os</title>
     <link rel="stylesheet" href="https://use.typekit.net/uap2ixo.css" />
     <link rel="stylesheet" href="src/styles/general.css" />
+    <link rel="stylesheet" href="src/styles/om-os.css" />
   </head>
 
   <body>
     <!-- components -->
     <Menu />
     <article class="hero-section"></article>
-    <article>
+    <article class="intro">
       <h1>Hvem er vi?</h1>
       <p>
         Roskilde Karate og Selvforsvar (RKOS) er en klub for alle, uanset alder, køn eller fysisk niveau. Hos os handler karate ikke kun om slag og spark, det er en mentalitet og en rejse, vi udvikler sammen og hver for sig. Vi skaber et trygt rum, hvor respekt og fællesskab er i centrum, både når vi træner kamp og sparring. <br /><br />
@@ -27,26 +28,29 @@ import Footer from "../components/Footer.astro";
       </p>
       <p>Vi opdager, hvor stærke vi egentlig er.</p>
       <div class="grid_1-1-1-1">
-        <div>
+        <div class="grid-item">
           <h2>2</h2>
           <p>hold</p>
         </div>
-        <div>
+        <div class="divider"></div>
+        <div class="grid-item">
           <h2>2</h2>
           <p>trænere</p>
         </div>
-        <div>
-          <h2>5</h2>
-          <p>år erfaring</p>
-        </div>
-        <div>
+        <div class="divider"></div>
+        <div class="grid-item">
           <h2>20+</h2>
           <p>medlemmer</p>
         </div>
+        <div class="divider"></div>
+        <div class="grid-item">
+          <h2>40+</h2>
+          <p>års erfaring</p>
+        </div>
       </div>
-      <img src="/imgs/gruppe-img.webp" alt="Gruppe billede" />
+      <img class="group-img" src="/imgs/gruppe-img.webp" alt="Gruppe billede" />
     </article>
-    <article class="grid_1-1-1">
+    <article class="kanku-grid">
       <div>
         <h2>Disciplin</h2>
         <p>Karate lærer os at holde fokus, vise respekt, yde vores bedste, også når det er hårdt. Disciplin er noget vi træner, og noget vi tager med os videre i livet.</p>
@@ -55,7 +59,7 @@ import Footer from "../components/Footer.astro";
         <h2>Fælleskab</h2>
         <p>Vi løfter hinanden uanset alder, niveau eller erfaring. Hos os er der plads til grin, kammeratskab og støtte, både på og af måtten.</p>
       </div>
-      <img src="/imgs/kanku-stort.webp" alt="Kanku Kyokushin ikon" />
+      <img class="kanku-logo" src="/imgs/kanku-stort.webp" alt="Kanku Kyokushin ikon" />
       <div>
         <h2>Osu</h2>
         <p>Et ord med mange betydninger: Vilje, respekt og udholdenhed. Når vi siger "Osu", minder vi hinanden om at møde modstand med styrke og respekt.</p>
@@ -69,28 +73,28 @@ import Footer from "../components/Footer.astro";
       <h2>Her ligger vi</h2>
       <Map />
     </article>
-    <article>
+    <article class="karate-ordbog">
       <h2>Karate Ordbog</h2>
       <p>Her finder du en lille forklaring på de japanske ord, vi siger igen og igen på måtten.</p>
       <div class="grid_1-1-1-1">
-        <div>
-          <img src="imgs/ikoner/gi.svg" alt="Gi ikon" />
-          <h2>Gi</h2>
+        <div class="grid-item">
+          <img class="icon" src="imgs/ikoner/gi.svg" alt="Gi ikon" />
+          <h3>Gi</h3>
           <p>Karatedragt</p>
         </div>
-        <div>
-          <img src="imgs/ikoner/obi.svg" alt="Obi ikon" />
-          <h2>Obi</h2>
+        <div class="grid-item">
+          <img class="icon" src="imgs/ikoner/obi.svg" alt="Obi ikon" />
+          <h3>Obi</h3>
           <p>Bælte</p>
         </div>
-        <div>
-          <img src="imgs/ikoner/dojo.svg" alt="Dojo ikon" />
-          <h2>Dojo</h2>
+        <div class="grid-item">
+          <img class="icon" src="imgs/ikoner/dojo.svg" alt="Dojo ikon" />
+          <h3>Dojo</h3>
           <p>Træningssal</p>
         </div>
-        <div>
-          <img src="imgs/ikoner/senpai.svg" alt="Senpai ikon" />
-          <h2>Senpai</h2>
+        <div class="grid-item">
+          <img class="icon" src="imgs/ikoner/senpai.svg" alt="Senpai ikon" />
+          <h3>Senpai</h3>
           <p>Instruktør</p>
         </div>
       </div>
