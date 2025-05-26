@@ -42,9 +42,9 @@ body {
 /* margins/paddings & fonts */
 :root {
   /* mobil */
-  --s: 40px;
-  --m: 70px;
-  --l: 100px;
+  --s: 20px;
+  --m: 40px;
+  --l: 70px;
 
   /* desktop */
   --S: 55px;

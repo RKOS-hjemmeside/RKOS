@@ -1,3 +1,9 @@
+.intro,
+.values-grid,
+.karate-ordbog {
+  padding: var(--m);
+}
+
 .grid_1-1-1-1 {
   display: flex;
   text-align: center;
@@ -6,7 +12,7 @@
 }
 
 .grid-item {
-  padding: 0 25px;
+  padding: 0 16px;
 }
 
 .divider {
@@ -21,8 +27,8 @@
 }
 
 .icon {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
 }
 
 @media (min-width: 720px) {
@@ -34,7 +40,6 @@
 /* padding */
 @media (min-width: 900px) {
   .intro,
-  .group-img,
   .values-grid,
   .karate-ordbog {
     padding: var(--M);
