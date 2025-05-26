@@ -19,34 +19,37 @@ import Footer from "../components/Footer.astro";
     <!-- components -->
     <Menu />
     <article class="hero-section"></article>
-    <article>
+    <article class="intro">
       <h1>Hvem er vi?</h1>
       <p>
         Roskilde Karate og Selvforsvar (RKOS) er en klub for alle, uanset alder, køn eller fysisk niveau. Hos os handler karate ikke kun om slag og spark, det er en mentalitet og en rejse, vi udvikler sammen og hver for sig. Vi skaber et trygt rum, hvor respekt og fællesskab er i centrum, både når vi træner kamp og sparring. <br /><br />
         I styrke- og udholdenhedstræningen udfordrer vi os selv til at yde vores bedste, og lidt mere. Gennem selvforsvar lærer vi at forstå kroppens svage punkter, men endnu vigtigere:
       </p>
       <p>Vi opdager, hvor stærke vi egentlig er.</p>
-      <div class="grid_1-1-1-1">
-        <div>
+      <div class="stats-grid">
+        <div class="stat-item">
           <h2>2</h2>
           <p>hold</p>
         </div>
-        <div>
+        <div class="divider"></div>
+        <div class="stat-item">
           <h2>2</h2>
           <p>trænere</p>
         </div>
-        <div>
-          <h2>5</h2>
-          <p>år erfaring</p>
-        </div>
-        <div>
+        <div class="divider"></div>
+        <div class="stat-item">
           <h2>20+</h2>
           <p>medlemmer</p>
         </div>
+        <div class="divider"></div>
+        <div class="stat-item">
+          <h2>40+</h2>
+          <p>års erfaring</p>
+        </div>
       </div>
-      <img src="/imgs/gruppe-img.webp" alt="Gruppe billede" />
+      <img class="group-img" src="/imgs/gruppe-img.webp" alt="Gruppe billede" />
     </article>
-    <article class="grid_1-1-1">
+    <article class="values-grid">
       <div>
         <h2>Disciplin</h2>
         <p>Karate lærer os at holde fokus, vise respekt, yde vores bedste, også når det er hårdt. Disciplin er noget vi træner, og noget vi tager med os videre i livet.</p>
@@ -69,7 +72,7 @@ import Footer from "../components/Footer.astro";
       <h2>Her ligger vi</h2>
       <Map />
     </article>
-    <article>
+    <article class="karate-ordbog">
       <h2>Karate Ordbog</h2>
       <p>Her finder du en lille forklaring på de japanske ord, vi siger igen og igen på måtten.</p>
       <div class="grid_1-1-1-1">
