@@ -1,3 +1,84 @@
 ---
-
+const { title, hold, age, range, activity, level, focus, key, instructor, name, day1, day2, text1, text2 } = Astro.props;
 ---
+
+<article>
+  <div class="text-o-img">
+    <h1>{title}</h1>
+    <img src=`/imgs/${hold}.webp` alt="Billede af karateholdet" />
+  </div>
+
+  <div class="info">
+    <p><b>{age}</b> {range}</p>
+    <p><b>{focus}</b> {key}</p>
+    <p><b>{activity}</b> {level}</p>
+    <p><b>{instructor}</b> {name}</p>
+  </div>
+
+  <div class="days">
+    <div>
+      <h2>{day1}</h2>
+      <p>{text1}</p>
+    </div>
+
+    <div>
+      <h2>{day2}</h2>
+      <p>{text2}</p>
+    </div>
+  </div>
+</article>
+
+<style>
+  article {
+    margin: var(--m);
+  }
+  h1 {
+    position: absolute;
+    text-align: center;
+    left: 50%; /*i samarbejde med transform gør dette at h1 er i midten*/
+    transform: translateX(-50%);
+    color: var(--spring-wood50);
+    z-index: 10;
+  }
+  .text-o-img img {
+    position: relative;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
+  .info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s);
+    margin: var(--s) var(--m) var(--s) var(--m);
+  }
+
+  .days {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: var(--s);
+    margin: var(--s) var(--m) var(--s) var(--m);
+  }
+
+  @media (min-width: 900px) {
+    article {
+      margin: 20px var(--L) 0 var(--L);
+    }
+    .text-o-img img {
+      border-radius: 20px 20px 0 0;
+      max-height: 735px;
+    }
+
+    .info {
+      column-gap: var(--L);
+      margin: var(--s) var(--M) var(--s) var(--M);
+    }
+
+    .days {
+      grid-template-columns: 1fr 1fr;
+      column-gap: var(--L);
+      margin: var(--s) var(--M) var(--s) var(--M);
+    }
+  }
+</style>
