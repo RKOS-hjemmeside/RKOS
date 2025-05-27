@@ -1,104 +1,90 @@
 ---
 import "../styles/general.css";
 import "../styles/om-os.css";
-import Menu from "../components/Menu.astro";
+import Layout from "../layouts/Layout.astro";
 import Map from "../components/Map.astro";
-import Footer from "../components/Footer.astro";
 ---
 
-<!doctype html>
-<html lang="da">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
-    <title>Om os</title>
-    <link rel="stylesheet" href="https://use.typekit.net/uap2ixo.css" />
-  </head>
-
-  <body>
-    <!-- components -->
-    <Menu />
-    <article class="hero-section"></article>
-    <article class="intro">
-      <h1>Hvem er vi?</h1>
-      <p>
-        Roskilde Karate og Selvforsvar (RKOS) er en klub for alle, uanset alder, køn eller fysisk niveau. Hos os handler karate ikke kun om slag og spark, det er en mentalitet og en rejse, vi udvikler sammen og hver for sig. Vi skaber et trygt rum, hvor respekt og fællesskab er i centrum, både når vi træner kamp og sparring. <br /><br />
-        I styrke- og udholdenhedstræningen udfordrer vi os selv til at yde vores bedste, og lidt mere. Gennem selvforsvar lærer vi at forstå kroppens svage punkter, men endnu vigtigere:
-      </p>
-      <p>Vi opdager, hvor stærke vi egentlig er.</p>
-      <div class="grid_1-1-1-1">
-        <div class="grid-item">
-          <h2>2</h2>
-          <p>hold</p>
-        </div>
-        <div class="line"></div>
-        <div class="grid-item">
-          <h2>2</h2>
-          <p>trænere</p>
-        </div>
-        <div class="line"></div>
-        <div class="grid-item">
-          <h2>20+</h2>
-          <p>medlemmer</p>
-        </div>
-        <div class="line"></div>
-        <div class="grid-item">
-          <h2>40+</h2>
-          <p>års erfaring</p>
-        </div>
+<Layout>
+  <!-- components -->
+  <article class="hero-section"></article>
+  <article class="intro">
+    <h1>Hvem er vi?</h1>
+    <p>
+      Roskilde Karate og Selvforsvar (RKOS) er en klub for alle, uanset alder, køn eller fysisk niveau. Hos os handler karate ikke kun om slag og spark, det er en mentalitet og en rejse, vi udvikler sammen og hver for sig. Vi skaber et trygt rum, hvor respekt og fællesskab er i centrum, både når vi træner kamp og sparring. <br /><br />
+      I styrke- og udholdenhedstræningen udfordrer vi os selv til at yde vores bedste, og lidt mere. Gennem selvforsvar lærer vi at forstå kroppens svage punkter, men endnu vigtigere:
+    </p>
+    <p>Vi opdager, hvor stærke vi egentlig er.</p>
+    <div class="grid_1-1-1-1">
+      <div class="grid-item">
+        <h2>2</h2>
+        <p>hold</p>
       </div>
-      <img class="group-img" src="/imgs/gruppe-img.webp" alt="Gruppe billede" />
-    </article>
-    <article class="values-grid">
-      <div class="value disciplin">
-        <h2>Disciplin</h2>
-        <p>Karate lærer os at holde fokus, vise respekt, yde vores bedste, også når det er hårdt. Disciplin er noget vi træner, og noget vi tager med os videre i livet.</p>
+      <div class="line"></div>
+      <div class="grid-item">
+        <h2>2</h2>
+        <p>trænere</p>
       </div>
-      <div class="value fælleskab">
-        <h2>Fælleskab</h2>
-        <p>Vi løfter hinanden uanset alder, niveau eller erfaring. Hos os er der plads til grin, kammeratskab og støtte, både på og af måtten.</p>
+      <div class="line"></div>
+      <div class="grid-item">
+        <h2>20+</h2>
+        <p>medlemmer</p>
       </div>
-      <img class="kanku-logo" src="/imgs/kanku-stort.webp" alt="Kanku Kyokushin ikon" />
-      <div class="value osu">
-        <h2>Osu</h2>
-        <p>Et ord med mange betydninger: Vilje, respekt og udholdenhed. Når vi siger "Osu", minder vi hinanden om at møde modstand med styrke og respekt.</p>
+      <div class="line"></div>
+      <div class="grid-item">
+        <h2>40+</h2>
+        <p>års erfaring</p>
       </div>
-      <div class="value for-alle">
-        <h2>Et sted for alle</h2>
-        <p>Uanset om du er barn, voksen, nybegynder eller erfaren, er du velkommen. Vi tror på, at forskellighed gør os stærkere.</p>
+    </div>
+    <img class="group-img" src="/imgs/gruppe-img.webp" alt="Gruppe billede" />
+  </article>
+  <article class="values-grid">
+    <div class="value disciplin">
+      <h2>Disciplin</h2>
+      <p>Karate lærer os at holde fokus, vise respekt, yde vores bedste, også når det er hårdt. Disciplin er noget vi træner, og noget vi tager med os videre i livet.</p>
+    </div>
+    <div class="value fælleskab">
+      <h2>Fælleskab</h2>
+      <p>Vi løfter hinanden uanset alder, niveau eller erfaring. Hos os er der plads til grin, kammeratskab og støtte, både på og af måtten.</p>
+    </div>
+    <img class="kanku-logo" src="/imgs/kanku-stort.webp" alt="Kanku Kyokushin ikon" />
+    <div class="value osu">
+      <h2>Osu</h2>
+      <p>Et ord med mange betydninger: Vilje, respekt og udholdenhed. Når vi siger "Osu", minder vi hinanden om at møde modstand med styrke og respekt.</p>
+    </div>
+    <div class="value for-alle">
+      <h2>Et sted for alle</h2>
+      <p>Uanset om du er barn, voksen, nybegynder eller erfaren, er du velkommen. Vi tror på, at forskellighed gør os stærkere.</p>
+    </div>
+  </article>
+  <article class="map">
+    <h1>Her ligger vi</h1>
+    <Map />
+  </article>
+  <article class="karate-ordbog">
+    <h2>Karate Ordbog</h2>
+    <p>Her finder du en lille forklaring på de japanske ord, vi siger igen og igen på måtten.</p>
+    <div class="grid_1-1-1-1">
+      <div class="grid-item">
+        <img class="icon" src="imgs/ikoner/gi.svg" alt="Gi ikon" />
+        <h3>Gi</h3>
+        <p>Karatedragt</p>
       </div>
-    </article>
-    <article class="map">
-      <h1>Her ligger vi</h1>
-      <Map />
-    </article>
-    <article class="karate-ordbog">
-      <h2>Karate Ordbog</h2>
-      <p>Her finder du en lille forklaring på de japanske ord, vi siger igen og igen på måtten.</p>
-      <div class="grid_1-1-1-1">
-        <div class="grid-item">
-          <img class="icon" src="imgs/ikoner/gi.svg" alt="Gi ikon" />
-          <h3>Gi</h3>
-          <p>Karatedragt</p>
-        </div>
-        <div class="grid-item">
-          <img class="icon" src="imgs/ikoner/obi.svg" alt="Obi ikon" />
-          <h3>Obi</h3>
-          <p>Bælte</p>
-        </div>
-        <div class="grid-item">
-          <img class="icon" src="imgs/ikoner/dojo.svg" alt="Dojo ikon" />
-          <h3>Dojo</h3>
-          <p>Træningssal</p>
-        </div>
-        <div class="grid-item">
-          <img class="icon" src="imgs/ikoner/senpai.svg" alt="Senpai ikon" />
-          <h3>Senpai</h3>
-          <p>Instruktør</p>
-        </div>
+      <div class="grid-item">
+        <img class="icon" src="imgs/ikoner/obi.svg" alt="Obi ikon" />
+        <h3>Obi</h3>
+        <p>Bælte</p>
       </div>
-    </article>
-    <Footer />
-  </body>
-</html>
+      <div class="grid-item">
+        <img class="icon" src="imgs/ikoner/dojo.svg" alt="Dojo ikon" />
+        <h3>Dojo</h3>
+        <p>Træningssal</p>
+      </div>
+      <div class="grid-item">
+        <img class="icon" src="imgs/ikoner/senpai.svg" alt="Senpai ikon" />
+        <h3>Senpai</h3>
+        <p>Instruktør</p>
+      </div>
+    </div>
+  </article>
+</Layout>
