@@ -74,8 +74,9 @@ p {
 a {
   font-family: "oswald", sans-serif;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 1rem;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 @media (min-width: 900px) {
@@ -91,7 +92,8 @@ a {
     font-size: 2rem;
   }
 
-  p {
+  p,
+  a {
     font-size: 1.3rem;
   }
 }

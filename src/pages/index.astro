@@ -1,32 +1,18 @@
 ---
-import Menu from "../components/Menu.astro";
+import "../styles/general.css";
+import Layout from "../layouts/Layout.astro";
 import Offert from "../components/Offert.astro";
 import Card from "../components/Card.astro";
 import Citation from "../components/Citation.astro";
 import Kanku from "../components/Kanku.astro";
-import Footer from "../components/Footer.astro";
 ---
 
-<!doctype html>
-<html lang="da">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
-    <title>Hjem</title>
-    <link rel="stylesheet" href="https://use.typekit.net/uap2ixo.css" />
-    <link rel="stylesheet" href="src/styles/general.css" />
-  </head>
-
-  <body>
-    <!-- components -->
-    <Menu />
-    <Offert />
-    <Card />
-    <Card />
-    <Card />
-    <Citation />
-    <Kanku />
-    <Footer />
-  </body>
-</html>
+<Layout>
+  <!-- components -->
+  <Offert />
+  <Card />
+  <Card />
+  <Card />
+  <Citation />
+  <Kanku />
+</Layout>
