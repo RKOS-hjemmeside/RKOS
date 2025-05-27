@@ -7,7 +7,11 @@ import Map from "../components/Map.astro";
 
 <Layout>
   <!-- components -->
-  <article class="hero-section"></article>
+  <article class="hero-section">
+    <video autoplay muted loop playsinline>
+      <source src="/public/videos/om-os.mov" type="video/mp4" />
+    </video>
+  </article>
   <article class="intro">
     <h1>Hvem er vi?</h1>
     <p>
@@ -88,3 +92,9 @@ import Map from "../components/Map.astro";
     </div>
   </article>
 </Layout>
+
+<style>
+  video {
+    width: 100%;
+  }
+</style>
