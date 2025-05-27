@@ -1,9 +1,8 @@
 ---
 import "../styles/general.css";
 import "../styles/kalender.css";
-import Menu from "../components/Menu.astro";
+import Layout from "../layouts/Layout.astro";
 import CalenderCard from "../components/CalenderCard.astro";
-import Footer from "../components/Footer.astro";
 
 const url = "https://rmnmiybwdlwyqkveaakh.supabase.co/rest/v1/kalender";
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJtbm1peWJ3ZGx3eXFrdmVhYWtoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc1NjcxMzIsImV4cCI6MjA2MzE0MzEzMn0.uOCnb23dVA36EYNtnoRazJJx5kXr0gPgv7CmXuAfbnk";
@@ -20,26 +19,14 @@ const data = await request.json();
 console.log("data", data);
 ---
 
-<!doctype html>
-<html lang="da">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
-    <title>Kalender</title>
-    <link rel="stylesheet" href="https://use.typekit.net/uap2ixo.css" />
-  </head>
+<Layout>
+  <div class="cards">
+    {
+      data.map((event) => {
+        return <CalenderCard data={event} />;
+      })
+    }
+  </div>
+</Layout>
 
-  <body>
-    <!-- components -->
-    <Menu />
-    <div class="cards">
-      {
-        data.map((event) => {
-          return <CalenderCard data={event} />;
-        })
-      }
-    </div>
-    <Footer />
-  </body>
-</html>
+<!-- håber det virker nu -->
