@@ -1,11 +1,13 @@
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+  gap: 10px;
+  margin: 0 var(--s) 0 var(--s);
 }
 
 @media (min-width: 900px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0 var(--S) 0 var(--S);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
