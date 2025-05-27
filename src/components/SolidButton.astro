@@ -1,0 +1,61 @@
+---
+const { link, text, variant } = Astro.props;
+---
+
+<a class={variant} href=`${link}`>{text}</a>
+
+<style>
+  a {
+    padding: 1rem;
+    display: block;
+  }
+
+  .black-white {
+    background-color: var(--mine-shaft950);
+    color: var(--spring-wood50);
+    border-radius: 10rem;
+    margin: 1rem 2rem 0 2rem;
+  }
+  .black-white:hover {
+    background-color: var(--spring-wood50);
+    color: var(--mine-shaft950);
+  }
+  .black-red {
+    background-color: var(--mine-shaft950);
+    color: var(--spring-wood50);
+    border-radius: 10rem;
+  }
+  .black-red:hover {
+    background-color: var(--red700);
+    color: var(--spring-wood50);
+  }
+
+  .red-white {
+    background-color: var(--red700);
+    color: var(--spring-wood50);
+    border-radius: 10rem;
+  }
+  .red-white:hover {
+    background-color: var(--spring-wood50);
+    color: var(--red700);
+  }
+
+  .red-black {
+    background-color: var(--red700);
+    color: var(--spring-wood50);
+    border-radius: 10rem;
+  }
+  .red-black:hover {
+    background-color: var(--mine-shaft950);
+    color: var(--spring-wood50);
+  }
+  /** DESKTOP **/
+  @media (min-width: 900px) {
+    a {
+      font-size: 28px;
+    }
+    .black-white {
+      margin: 2rem 20rem 0 20rem;
+    }
+  }
+</style>

@@ -1,0 +1,33 @@
+---
+import SolidButton from "./SolidButton.astro";
+---
+
+<div class="tilbud">
+  <div>
+    <h1>FØRSTE GANG MED KARATE?</h1>
+    <h1>FÅ FØRSTE MÅNED GRATIS</h1>
+    <p>Få en stærk start – træn op til 14 gange!</p>
+  </div>
+
+  <SolidButton variant="black-white" text="KONTAKT" link="/kontakt" />
+</div>
+
+<style>
+  .tilbud {
+    width: 95%;
+    min-height: 150;
+    padding: var(--s);
+    border-top-right-radius: 70px;
+    background-color: var(--red800);
+    color: var(--spring-wood50);
+    text-align: center;
+  }
+
+  /** DESKTOP **/
+  @media (min-width: 900px) {
+    .tilbud {
+      border-top-right-radius: 200px;
+      padding-left: 5rem;
+    }
+  }
+</style>
