@@ -3,17 +3,17 @@ import SolidButton from "./SolidButton.astro";
 ---
 
 <div class="tilbud">
-  <div>
-    <h1>FØRSTE GANG MED KARATE?</h1>
-    <h1>FÅ FØRSTE <b>MÅNED</b> GRATIS</h1>
-    <p>Få en stærk start – træn op til 14 gange!</p>
-  </div>
+  <h1>FØRSTE GANG MED KARATE?</h1>
+  <h1>FÅ FØRSTE <b>MÅNED</b> GRATIS</h1>
+  <p>Få en stærk start – træn op til 14 gange!</p>
 
   <SolidButton variant="black-white" text="KONTAKT" link="/kontakt" />
 </div>
 
 <style>
   .tilbud {
+    display: flex;
+    flex-direction: column;
     width: 95%;
     min-height: 150;
     padding: var(--s);
@@ -21,10 +21,17 @@ import SolidButton from "./SolidButton.astro";
     background-color: var(--red800);
     color: var(--spring-wood50);
     text-align: center;
+    justify-content: center;
+    align-items: center;
   }
 
   h1 {
+    font-size: 1.8rem;
     font-weight: 400;
+  }
+
+  p {
+    margin: var(--s);
   }
 
   /** DESKTOP **/
@@ -32,6 +39,15 @@ import SolidButton from "./SolidButton.astro";
     .tilbud {
       border-top-right-radius: 200px;
       padding-left: 5rem;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 400;
+      margin-left: 2%;
+    }
+    p {
+      margin-left: 2%;
     }
   }
 </style>
