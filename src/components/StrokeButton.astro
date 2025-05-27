@@ -1,0 +1,25 @@
+---
+const { link, text, variant } = Astro.props;
+---
+
+<a class={variant} href=`${link}`>{text}</a>
+
+<style>
+  a {
+    padding: 1rem;
+    display: block;
+  }
+
+  .black-red {
+    stroke: var(--mine-shaft950);
+    color: var(--spring-wood50);
+    border-radius: 10rem;
+  }
+  .black-red:hover {
+    stroke: var(--red700);
+    color: var(--spring-wood50);
+  }
+
+  @media (min-width: 900px) {
+  }
+</style>
