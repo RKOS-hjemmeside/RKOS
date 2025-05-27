@@ -5,7 +5,7 @@ import Menu from "../components/Menu.astro";
 import CalenderCard from "../components/CalenderCard.astro";
 import Footer from "../components/Footer.astro";
 
-const url = "https://rmnmiybwdlwyqkveaakh.supabase.co/rest/v1/RKOS_kalender";
+const url = "https://rmnmiybwdlwyqkveaakh.supabase.co/rest/v1/kalender";
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJtbm1peWJ3ZGx3eXFrdmVhYWtoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc1NjcxMzIsImV4cCI6MjA2MzE0MzEzMn0.uOCnb23dVA36EYNtnoRazJJx5kXr0gPgv7CmXuAfbnk";
 
 const options = {
@@ -33,7 +33,13 @@ console.log("data", data);
   <body>
     <!-- components -->
     <Menu />
-    <CalenderCard />
+    <div class="cards">
+      {
+        data.map((event) => {
+          return <CalenderCard data={event} />;
+        })
+      }
+    </div>
     <Footer />
   </body>
 </html>
