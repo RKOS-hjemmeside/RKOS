@@ -1,0 +1,78 @@
+---
+import SolidButton from "./SolidButton.astro";
+import StrokeButton from "./StrokeButton.astro";
+
+const { data } = Astro.props;
+---
+
+<article>
+  <img src={data.img} alt=`Billede af ${data.titel}` />
+  <div class="info">
+    <h2>{data.activity}</h2>
+    <div class="event-info">
+      <div class="icon-grid">
+        <img class="icon" src="imgs/ikoner/date.svg" alt="Dato ikon" />
+        <p>{data.date}</p>
+      </div>
+      <div class="icon-grid">
+        <img class="icon" src="imgs/ikoner/time.svg" alt="Tid ikon" />
+        <p>{data.start} - {data.end}</p>
+      </div>
+      <div class="icon-grid">
+        <img class="icon" src="imgs/ikoner/location.svg" alt="Lokation ikon" />
+        <p>{data.location}</p>
+      </div>
+    </div>
+    <div class="buttons">
+      <StrokeButton variant="black-red" text="Læs mere" link="/hold" />
+      <SolidButton variant="red-black" text=`${data.book}` link="/hold" />
+    </div>
+  </div>
+</article>
+
+<style>
+  article {
+    width: 500px;
+    padding-bottom: 1rem;
+  }
+
+  .info {
+    padding: 30px 20px;
+  }
+  h2 {
+    text-transform: uppercase;
+  }
+
+  .event-info {
+    display: grid;
+    gap: 8px;
+    margin: 0.5rem 0 1rem;
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .icon-grid {
+    display: flex;
+    gap: 10px;
+  }
+
+  .buttons {
+    display: flex;
+  }
+
+  @media (min-width: 900px) {
+    .info {
+      padding: 30px 25px;
+    }
+    .event-info {
+      gap: 12px;
+    }
+    .icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
+</style>
