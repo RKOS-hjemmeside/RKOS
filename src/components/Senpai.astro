@@ -1,0 +1,65 @@
+---
+const { name, title, text1, text2, belt } = Astro.props;
+---
+
+<article>
+  <img id="profil" src=`/imgs/${name}.webp` alt=`Billede af ${name}` />
+
+  <div class="info">
+    <h2>{title}</h2>
+    <p>{text1}</p>
+    <p>{text2}</p>
+    <img id="belt" src=`/imgs/ikoner/${belt}.svg` alt="Ikon af trænerens karatebælte" />
+  </div>
+</article>
+
+<style>
+  p {
+    font-size: 0.8rem;
+    margin: 0 0 0.8rem 0;
+  }
+  h2 {
+    color: var(--red800);
+  }
+  article {
+    margin: var(--s);
+    display: flex;
+    aspect-ratio: 16/9;
+  }
+
+  #profil {
+    width: 35%;
+    position: relative;
+    border-radius: 20px 0px 0px 20px;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
+  .info {
+    width: 75%;
+    background-color: white;
+    padding: 0.8rem var(--s) 0;
+    border-radius: 0 20px 20px 0;
+  }
+
+  #belt {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 30%;
+    object-fit: contain;
+  }
+
+  @media (min-width: 900px) {
+    article {
+      margin: 20px var(--S) var(--S);
+    }
+
+    #profil {
+      width: 40%;
+    }
+    .info {
+      padding: 1rem var(--s) 1rem;
+    }
+  }
+</style>

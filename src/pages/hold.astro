@@ -7,19 +7,29 @@ import Senpai from "../components/Senpai.astro";
 import Prices from "../components/Prices.astro";
 ---
 
-<Layout>
+<Layout title="Hold" meta="På denne side kan du læse om RKOS's hold og instruktører">
   <h1>VORES HOLD</h1>
   <HoldCard title="JUNIOR HOLD" hold="junior-hold" age="Alder:" range="6-15 år" activity="Træning:" level="Karate og selvforsvar" focus="Fokus:" key="Trygt fællesskab og social udvikling" instructor="Underviser:" name="Senpai Julie" day1="MANDAG" text1="Hver mandag mødes Junior holdet 17:30 - 18:30" day2="TORSDAG" text2="Hver torsdag mødes Junior holdet 17:30 - 18:30" />
   <HoldCard title="SENIOR HOLD" hold="senior-hold" age="Alder:" range="15 år og opefter" activity="Træning:" level="Karate og selvforsvar (avanceret)" focus="Fokus:" key="Forbedring af færdigheder" instructor="Underviser:" name="Senpai Per eller Senpai Julie" day1="MANDAG" text1="Hver mandag mødes Senior holdet 18:00 - 19:30" day2="TORSDAG" text2="Hver torsdag mødes Senior holdet 18:00 - 19:30" />
   <HoldCard title="EKSTRA TRÆNING" hold="ekstra-training" age="Alder:" range="15 år og opefter" activity="Træning:" level="avanceret" focus="Fokus:" key="Forbedring af færdigheder" instructor="Underviser:" name="Senpai Per eller Senpai Julie" day1="FREDAG" text1="Hver anden fredag har vi Kamptræning, her træner vi praktisk og for øvet vores hånd-til-hånd kamp, som der er blevet undervist tidligere på ugen. Her får man øvet de essentielle ting, igen." day2="SØNDAG" text2="Søndagstræning foregår i Boserup Skov, et lille stykke udenfor Roskilde midtby. Her får vi trænet i naturens smukke omgivelser. Noget godt til både krop og sjæl." />
   <Offert />
-  <Senpai />
-  <Senpai />
+  <h1>VORES INSTRUKTØRER</h1>
+  <div id="grid_1-1">
+    <Senpai name="per" title="SENPAI PER" text1="Senpai Per har undervist i karate og selvforsvar i mere end 40 år. Han er gradueret Nidan, som er 2. Dan sort bælte, med to guldfarvede streger." text2="Per har kurser i undervisning, genoptræning og idræts psykologi. Med sin erfaring skaber han et trygt og engagerende læringsmiljø." belt="Belt_2" />
+    <Senpai name="julie" title="SENPAI JULIE" text1="Senpai Julie har trænet karate siden hun var barn og har derfor 25 års erfaring. Hun er gradueret Shodan, som er 1. Dan sort bælte, med en guldfarvet streg." text2="Til hverdag er hun skolelærer i indskoling i Roskilde kommune. Som instruktør gør hun alt for at levere en fyldestgørende træning." belt="Belt_1" />
+  </div>
   <Prices />
 </Layout>
 
 <style>
   h1 {
     text-align: center;
+  }
+
+  @media (min-width: 900px) {
+    #grid_1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
   }
 </style>
