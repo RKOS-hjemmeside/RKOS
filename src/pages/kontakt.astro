@@ -8,28 +8,170 @@ import Kanku from "../components/Kanku.astro";
 <Layout>
   <!-- components -->
   <article class="grid_1-1">
-    <div>
-      <h1>Har du spørgmål?</h1>
-      <p>
-        Har du spørgsmål, eller er du nysgerrig på, om karate og selvforsvar er noget for dig? <br /><br />
-        Uanset om du er begynder, forælder til et nysgerrigt barn, eller allerede har erfaring, er du altid velkommen til at skrive eller ringe til os!
-      </p>
-      <div>
-        <img src="/imgs/ikoner/email-dark.svg" alt="Email ikon" />
-        <p>EMAIL</p>
-        <p>rkos2020@outlook.dk</p>
+    <div class="contact-container">
+      <div class="text">
+        <h1>Har du spørgmål?</h1>
+        <p>Har du spørgsmål, eller er du nysgerrig på, om karate og selvforsvar er noget for dig? Uanset om du er begynder, forælder til et nysgerrigt barn, eller allerede har erfaring, er du altid velkommen til at skrive eller ringe til os!</p>
       </div>
-      <div>
-        <img src="/imgs/ikoner/telefon-dark.svg" alt="Telefon ikon" />
-        <p>TLF NR.</p>
-        <p>26196648</p>
+      <div class="contact">
+        <div class="icon-text">
+          <img src="/imgs/ikoner/email-dark.svg" alt="Email ikon" />
+          <div>
+            <p>EMAIL</p>
+            <p class="red">rkos2020@outlook.dk</p>
+          </div>
+        </div>
+        <div class="icon-text">
+          <img src="/imgs/ikoner/telefon-dark.svg" alt="Telefon ikon" />
+          <div>
+            <p>TLF NR.</p>
+            <p class="red">26196648</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="form">
+    <div class="form-container">
       <!-- set form here -->
+      <h2>Kom i kontakt med os</h2>
+      <p>Udfyld formularen herunder, så kontakter vi dig hurtigst muligt.</p>
+      <form action="/tak">
+        <label for="fullname"></label>
+        <input type="text" id="fullname" name="fullname" placeholder="Fulde navn *" required />
+
+        <label for="email"></label>
+        <input type="email" id="email" name="email" placeholder="Email *" required />
+
+        <label for="phone"></label>
+        <input type="tel" id="phone" name="nummer" placeholder="Telefonnummer" />
+
+        <label for="subject"></label>
+        <textarea id="subject" name="subject" placeholder="Besked *" required></textarea>
+
+        <button type="submit" value="Submit">SEND</button>
+      </form>
     </div>
+  </article>
+  <article class="quote">
     <p class="italic">"Det første skridt mod styrke er at turde række ud."</p>
   </article>
   <Map />
   <Kanku />
 </Layout>
+
+<style>
+  .grid_1-1 {
+    padding: var(--m);
+  }
+
+  .text {
+    max-width: 574px;
+  }
+
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: var(--m) 0;
+    gap: 60px;
+  }
+
+  .icon-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .icon-text p {
+    font-size: 0.8rem;
+  }
+
+  .red {
+    color: var(--red700);
+    font-weight: 500;
+  }
+
+  .form-container {
+    background-color: var(--mine-shaft100);
+    padding: var(--s) var(--m) var(--m);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: var(--s) 0 var(--s) 0;
+  }
+
+  input,
+  textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--mine-shaft300);
+    font-family: futura-pt, sans-serif;
+    font-size: 1rem;
+  }
+
+  button {
+    align-self: center;
+    background-color: var(--red700);
+    color: var(--spring-wood50);
+    border-radius: 10rem;
+    padding: 1rem;
+    display: block;
+    text-align: center;
+    width: 200px;
+    border: none;
+    cursor: pointer;
+    transition: 0.6s ease;
+    font-family: "oswald", sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    margin-top: var(--s);
+  }
+
+  button:hover {
+    background-color: var(--mine-shaft950);
+    color: var(--spring-wood50);
+    transition: 0.6s ease;
+  }
+
+  .italic {
+    text-align: center;
+    font-style: italic;
+    font-weight: 100;
+    padding-bottom: var(--M);
+  }
+
+  @media (min-width: 900px) {
+    .grid_1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: var(--M) var(--L) var(--S) var(--L);
+    }
+
+    .contact {
+      display: flex;
+      flex-direction: column;
+      row-gap: 40px;
+      margin: var(--S) 0 0;
+    }
+
+    .icon-text {
+      font-size: 1rem;
+    }
+
+    .form-container {
+      margin-left: var(--S);
+    }
+
+    form {
+      margin: var(--s) 0 var(--S) 0;
+    }
+
+    button {
+      width: 300px;
+    }
+  }
+</style>
