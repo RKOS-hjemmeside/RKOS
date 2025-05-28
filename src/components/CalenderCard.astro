@@ -24,14 +24,19 @@ const { data } = Astro.props;
       </div>
     </div>
     <div class="buttons">
-      <StrokeButton variant="black-red" text="Læs mere" link="/hold" />
-      <SolidButton variant="red-black" text=`${data.book}` link="/hold" />
+      <div class="button">
+        <StrokeButton variant="black-red" text="Læs mere" link="/hold" />
+      </div>
+      <div class="button">
+        <SolidButton variant="red-black" text=`${data.book}` link="/hold" />
+      </div>
     </div>
   </div>
 </article>
 
 <style>
   article {
+    display: grid;
     background-color: white;
     margin: 30px 0 10px 0;
     border-radius: 0 20px 20px 20px;
@@ -45,6 +50,11 @@ const { data } = Astro.props;
   }
   h2 {
     text-transform: uppercase;
+  }
+
+  /* Vi bruger global fordi selvom der er en specific font-family til komponentet, så lytter den til det vi skriver nu */
+  :global(.buttons a) {
+    font-size: 0.6rem;
   }
 
   .event-info {
@@ -65,6 +75,7 @@ const { data } = Astro.props;
 
   .buttons {
     display: flex;
+    justify-content: space-around;
   }
 
   p {
@@ -86,6 +97,10 @@ const { data } = Astro.props;
 
     p {
       font-size: 1.3rem;
+    }
+
+    .button {
+      width: 116px;
     }
   }
 </style>

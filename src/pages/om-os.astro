@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import Map from "../components/Map.astro";
 ---
 
-<Layout>
+<Layout title="Kalender" meta="Lær Roskilde Karate og Selvforsvar at kende – en klub for alle aldre og niveauer, med fokus på disciplin, fællesskab og styrke. Udforsk vores værdier, hold og træningsfilosofi.">
   <!-- components -->
   <article class="hero-section">
     <video autoplay muted loop playsinline>
@@ -96,5 +96,96 @@ import Map from "../components/Map.astro";
 <style>
   video {
     width: 100%;
+  }
+
+  .intro,
+  .values-grid,
+  .karate-ordbog {
+    padding: var(--m);
+  }
+
+  .grid_1-1-1-1 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: var(--s);
+  }
+
+  .grid-item {
+    padding: 0 16px;
+  }
+
+  .values-grid {
+    padding: var(--l);
+    display: grid;
+    text-align: center;
+  }
+
+  .value {
+    margin-bottom: 20px;
+  }
+
+  .kanku-logo {
+    width: 100px;
+    height: 100px;
+    justify-self: center;
+    align-self: center;
+    margin: 25px;
+  }
+
+  .map {
+    display: grid;
+    text-align: center;
+  }
+
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  @media (min-width: 720px) {
+    .grid-item {
+      padding: 0 65px;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .intro,
+    .values-grid,
+    .karate-ordbog {
+      padding: var(--M);
+    }
+
+    .grid_1-1-1-1 {
+      padding: var(--S);
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .kanku-logo {
+      width: 200px;
+      height: 200px;
+      margin: 50px;
+      grid-row: 2/3;
+    }
+
+    .disciplin,
+    .for-alle {
+      grid-column: 2/3;
+    }
+
+    .fælleskab,
+    .osu {
+      grid-row: 2/3;
+    }
+
+    .icon {
+      width: 126px;
+      height: 126px;
+    }
   }
 </style>
