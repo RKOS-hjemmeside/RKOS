@@ -1,8 +1,8 @@
 ---
-const { link, text, variant } = Astro.props;
+const { link, text, variant, page } = Astro.props;
 ---
 
-<a class={variant} href=`${link}`>{text}</a>
+<a class={variant} href={link} aria-label=`Go to ${page} side`>{text}</a>
 
 <style>
   a {
