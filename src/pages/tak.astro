@@ -1,0 +1,43 @@
+---
+import "../styles/general.css";
+import Layout from "../layouts/Layout.astro";
+import SolidButton from "../components/SolidButton.astro";
+import Kanku from "../components/Kanku.astro";
+---
+
+<Layout>
+  <article>
+    <h1>TAK FOR DIN BESKED!</h1>
+    <p>Vi har modtaget din henvendelse og vender tilbage til dig hurtigst muligt.</p>
+    <div class="button">
+      <SolidButton variant="red-black" text="Tilbage til forsiden" page="forside" link="/" />
+    </div>
+  </article>
+
+  <Kanku />
+</Layout>
+
+<style>
+  article {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: var(--L) var(--l) var(--M) var(--l);
+  }
+
+  .button {
+    width: 200px;
+    align-self: center;
+    margin-top: var(--m);
+  }
+
+  @media (min-width: 900px) {
+    article {
+      margin: var(--M) var(--L) 0 var(--L);
+    }
+
+    .button {
+      width: 300px;
+    }
+  }
+</style>
