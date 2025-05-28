@@ -16,12 +16,6 @@
   padding: 0 16px;
 }
 
-.line {
-  width: 1px;
-  height: 30px;
-  background-color: var(--mine-shaft300);
-}
-
 .values-grid {
   padding: var(--l);
   display: grid;
