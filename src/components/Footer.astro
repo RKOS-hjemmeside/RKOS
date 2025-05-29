@@ -1,0 +1,143 @@
+---
+import Logo from "./Logo.astro";
+---
+
+<footer>
+  <div class="grid">
+    <div>
+      <h1>Roskilde Karate og Selvsforsvar</h1>
+      <h2>Kontakt os</h2>
+      <div>
+        <img class="ikon" src="imgs/ikoner/telefon-light.svg" alt="Telefon ikon" />
+        <div class="">
+          <p>TLF NR.</p>
+          <p class="red">26 19 66 48</p>
+        </div>
+      </div>
+      <div>
+        <img class="ikon" src="imgs/ikoner/email-light.svg" alt="Email ikon" />
+        <div>
+          <p>EMAIL</p>
+          <a class="red" href="mailto:rkos2020@outlook.dk">rkos2020@outlook.dk</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="form">
+      <!-- set form here -->
+    </div>
+
+    <div class="pages">
+      <h2>Gå til</h2>
+      <nav>
+        <ul>
+          <li><a href="/" aria-label="Gå til Hjem side">Hjem</a></li>
+          <li><a href="/hold" aria-label="Gå til Hold side">Hold</a></li>
+          <li><a href="/kalender" aria-label="Gå til Kalender side">Kalender</a></li>
+          <li><a href="/om-os" aria-label="Gå til Om os side">Om os</a></li>
+          <li><a href="/kontakt" aria-label="Gå til Kontakt side">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="social-grid">
+      <h2>Følg os på</h2>
+      <a class="social" aria-label="Gå til RKOS Facebook" href="https://www.facebook.com/profile.php?id=100064854705818">
+        <img class="ikon" src="/imgs/ikoner/facebook.svg" alt="Facebook ikon" />
+        <p>Facebook</p>
+      </a>
+      <!-- link to instagram mockup -->
+      <a class="social" aria-label="Gå til RKOS Instagram" href="https://rmnmiybwdlwyqkveaakh.supabase.co/storage/v1/object/sign/img/RKOS-insta-mockup.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzQzNzAwOTAzLWJiOWMtNGI3ZC04MWRiLTU0NmExYTZjMGVlNyJ9.eyJ1cmwiOiJpbWcvUktPUy1pbnN0YS1tb2NrdXAucG5nIiwiaWF0IjoxNzQ4NTMwOTA3LCJleHAiOjE3ODAwNjY5MDd9.awFowNN0v15TuIyYTXMtEhLxcfc6Pco4kCTBl6gnhcY">
+        <img class="ikon" src="/imgs/ikoner/instagram.svg" alt="Instagram ikon" />
+        <p>Instagram</p>
+      </a>
+      <div class="logo">
+        <Logo />
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="line"></div>
+    <p>© 2025 Roskilde Karate og Selvforsvar. Alle rettigheder forbeholdes.</p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--mine-shaft950);
+    padding: var(--m) var(--m) var(--S);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  .form {
+    display: none;
+  }
+
+  .social {
+    display: flex;
+  }
+
+  .ikon {
+    width: 20px;
+    height: 20px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    color: var(--spring-wood50);
+  }
+
+  h2,
+  p,
+  a {
+    color: var(--spring-wood50);
+    text-transform: none;
+  }
+
+  .red {
+    color: var(--red700);
+    font-weight: 600;
+  }
+
+  /* gå til column */
+  ul {
+    list-style: none;
+  }
+  ul a {
+    font-family: futura-pt, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+  }
+
+  /* .red-hover:hover {
+    color: var(--red700);
+    font-weight: 500;
+    transition: color 0.6s ease;
+  } */
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .line {
+    rotate: 90deg;
+  }
+
+  @media (min-width: 900px) {
+    .form {
+      display: grid;
+    }
+
+    .ikon {
+      width: 30px;
+      height: 30px;
+    }
+  }
+</style>
