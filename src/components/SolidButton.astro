@@ -6,16 +6,17 @@ const { link, text, variant, page } = Astro.props;
 
 <style>
   a {
-    padding: 1rem;
+    padding: 0.6rem 1rem;
     display: block;
     text-align: center;
+    font-size: 0.8rem;
   }
 
   .black-white {
     background-color: var(--mine-shaft950);
     color: var(--spring-wood50);
     border-radius: 10rem;
-    width: 300px;
+    width: 200px;
   }
   .black-white:hover {
     background-color: var(--spring-wood50);
@@ -52,5 +53,12 @@ const { link, text, variant, page } = Astro.props;
   }
   /** DESKTOP **/
   @media (min-width: 900px) {
+    a {
+      padding: 1rem;
+      font-size: 1rem;
+    }
+    .black-white {
+      width: 300px;
+    }
   }
 </style>
