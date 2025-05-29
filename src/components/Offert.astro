@@ -14,15 +14,16 @@ import SolidButton from "./SolidButton.astro";
   .tilbud {
     display: flex;
     flex-direction: column;
-    width: 95%;
     min-height: 150;
-    padding: var(--s);
+    margin-right: var(--s);
     border-top-right-radius: 70px;
     background-color: var(--red800);
     color: var(--spring-wood50);
     text-align: center;
     justify-content: center;
     align-items: center;
+    padding: var(--s);
+    padding-left: var(--m);
   }
 
   h1 {
@@ -38,7 +39,8 @@ import SolidButton from "./SolidButton.astro";
   @media (min-width: 900px) {
     .tilbud {
       border-top-right-radius: 200px;
-      padding-left: 5rem;
+      padding: var(--s);
+      padding-left: var(--m);
     }
 
     h1 {

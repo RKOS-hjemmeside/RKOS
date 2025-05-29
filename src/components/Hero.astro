@@ -1,0 +1,38 @@
+---
+
+---
+
+<article>
+  <img id="hero" src="/imgs/hero-img.webp" alt="Hero image af karatespark" />
+  <img id="name" src="/imgs/ikoner/RKOS-name_logo.svg" alt="Klub navn" />
+</article>
+
+<style>
+  article {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  #hero {
+    position: absolute;
+  }
+
+  #name {
+    grid-row: 2/3;
+    position: relative;
+    z-index: 20;
+    max-width: 50%;
+    justify-self: left;
+    margin-left: var(--s);
+  }
+
+  @media (min-width: 900px) {
+    #hero {
+      margin-top: -35px;
+    }
+    #name {
+      margin-left: var(--S);
+      margin-top: 0.8rem;
+    }
+  }
+</style>

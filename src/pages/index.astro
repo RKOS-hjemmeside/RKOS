@@ -1,6 +1,8 @@
 ---
 import "../styles/general.css";
 import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import SolidButton from "../components/SolidButton.astro";
 import Offert from "../components/Offert.astro";
 import Card from "../components/Card.astro";
 import Citation from "../components/Citation.astro";
@@ -9,10 +11,38 @@ import Kanku from "../components/Kanku.astro";
 
 <Layout>
   <!-- components -->
+  <Hero />
+  <article>
+    <img src="/imgs/parade.webp" alt="Karate parade" />
+    <div>
+      <h2>Er du klar til selvforsvar?</h2>
+      <p>Hos RKOS lærer man karate og selvforsvar, hvordan du bruger din modstanders styrke mod dem selv. Det handler ikke kun om slag og spark, man bliver også udfordret med disciplin, sådan udvikler vi os nemlig både fysisk og mentalt.</p>
+      <SolidButton variant="red-black" text="LÆS MERE OM VORES HOLD" link="/hold" page="Hold" />
+    </div>
+  </article>
   <Offert />
   <Card />
   <Card />
   <Card />
   <Citation />
   <Kanku />
+
+  <style>
+    article {
+      display: grid;
+      grid-template-columns: 0.8fr 1fr;
+      margin: 20px;
+      gap: var(--s);
+    }
+
+    article img {
+      align-self: center;
+      margin-bottom: var(--s);
+    }
+
+    @media (min-width: 900px) {
+      article {
+      }
+    }
+  </style>
 </Layout>
