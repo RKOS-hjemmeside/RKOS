@@ -1,6 +1,5 @@
 ---
 import "../styles/general.css";
-import "../styles/kalender.css";
 import Layout from "../layouts/Layout.astro";
 import CalenderCard from "../components/CalenderCard.astro";
 
@@ -19,7 +18,7 @@ const data = await request.json();
 console.log("data", data);
 ---
 
-<Layout>
+<Layout title="Kalender" meta="Hold dig opdateret på alle kommende træninger hos Roskilde Karate og Selvforsvar. Se tidspunkter og detaljer for alle hold, for begyndere og øvede.">
   <div class="cards">
     {
       data.map((event) => {
@@ -29,4 +28,18 @@ console.log("data", data);
   </div>
 </Layout>
 
-<!-- håber det virker nu -->
+<style>
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+    gap: 10px;
+    margin: 0 var(--s);
+  }
+
+  @media (min-width: 900px) {
+    .cards {
+      margin: 0 var(--S);
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }
+</style>

@@ -5,10 +5,14 @@ import SolidButton from "../components/SolidButton.astro";
 import Kanku from "../components/Kanku.astro";
 ---
 
-<Layout>
+<Layout title="Tak!" meta="Tak for din tilmelding til gratis prøvemåned. Vi kontakter dig hurtigst muligt med information.">
   <article>
-    <h1>TAK FOR DIN BESKED!</h1>
-    <p>Vi har modtaget din henvendelse og vender tilbage til dig hurtigst muligt.</p>
+    <h1>TAK FOR DIN TILMELDING!</h1>
+    <h2>Vi har modtaget din tilmelding og glæder os til at hjælpe dig godt i gang.</h2>
+    <p>
+      En af vores medarbejdere vil kontakte dig hurtigst muligt med alle nødvendige oplysninger, så du kan få mest muligt ud af din prøveperiode. Hvis du har spørgsmål, er du altid velkommen til at skrive til os på <a href="mailto:rkos2020@outlook.dk">rkos2020@outlook.dk</a> eller ringe på
+      <p class="number">26 19 66 48</p>
+    </p>
     <div class="button">
       <SolidButton variant="red-black" text="Tilbage til forsiden" page="forside" link="/" />
     </div>
@@ -23,6 +27,19 @@ import Kanku from "../components/Kanku.astro";
     flex-direction: column;
     text-align: center;
     margin: var(--L) var(--l) var(--M) var(--l);
+  }
+
+  h2 {
+    margin-bottom: var(--s);
+  }
+
+  :global(p a),
+  .number {
+    font-family: futura-pt, sans-serif;
+    color: var(--red700);
+    text-transform: none;
+    font-weight: 500;
+    margin: 0;
   }
 
   .button {
