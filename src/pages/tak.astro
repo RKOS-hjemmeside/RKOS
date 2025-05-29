@@ -10,7 +10,7 @@ import Kanku from "../components/Kanku.astro";
     <h1>TAK FOR DIN TILMELDING!</h1>
     <h2>Vi har modtaget din tilmelding og glæder os til at hjælpe dig godt i gang.</h2>
     <p>
-      En af vores medarbejdere vil kontakte dig hurtigst muligt med alle nødvendige oplysninger, så du kan få mest muligt ud af din prøveperiode. <br />Hvis du har spørgsmål, er du altid velkommen til at skrive til os på <a href="mailto:rkos2020@outlook.dk">rkos2020@outlook.dk</a> eller ringe på
+      En af vores medarbejdere vil kontakte dig hurtigst muligt med alle nødvendige oplysninger, så du kan få mest muligt ud af din prøveperiode. <br class="break" /><br />Hvis du har spørgsmål, er du altid velkommen til at skrive til os på <a href="mailto:rkos2020@outlook.dk">rkos2020@outlook.dk</a> eller ringe på
       <b class="number">26 19 66 48</b>.
     </p>
     <div class="button">
@@ -53,8 +53,15 @@ import Kanku from "../components/Kanku.astro";
 
   @media (min-width: 900px) {
     article {
-      text-align: center;
       margin: var(--M) var(--L) 0 var(--L);
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .break {
+      display: none;
     }
 
     .button {

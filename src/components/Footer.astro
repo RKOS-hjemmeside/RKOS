@@ -9,7 +9,7 @@ import Logo from "./Logo.astro";
       <h2>Kontakt os</h2>
       <div>
         <img class="ikon" src="imgs/ikoner/telefon-light.svg" alt="Telefon ikon" />
-        <div>
+        <div class="">
           <p>TLF NR.</p>
           <p class="red">26 19 66 48</p>
         </div>
@@ -42,15 +42,15 @@ import Logo from "./Logo.astro";
 
     <div class="social-grid">
       <h2>Følg os på</h2>
-      <div class="social">
+      <a class="social" aria-label="Gå til RKOS Facebook" href="https://www.facebook.com/profile.php?id=100064854705818">
         <img class="ikon" src="/imgs/ikoner/facebook.svg" alt="Facebook ikon" />
-        <a href="https://www.facebook.com/profile.php?id=100064854705818" aria-label="Go to RKOS Facebook">Facebook</a>
-      </div>
-      <div class="social">
+        <p>Facebook</p>
+      </a>
+      <!-- link to instagram mockup -->
+      <a class="social" aria-label="Gå til RKOS Instagram" href="https://rmnmiybwdlwyqkveaakh.supabase.co/storage/v1/object/sign/img/RKOS-insta-mockup.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzQzNzAwOTAzLWJiOWMtNGI3ZC04MWRiLTU0NmExYTZjMGVlNyJ9.eyJ1cmwiOiJpbWcvUktPUy1pbnN0YS1tb2NrdXAucG5nIiwiaWF0IjoxNzQ4NTMwOTA3LCJleHAiOjE3ODAwNjY5MDd9.awFowNN0v15TuIyYTXMtEhLxcfc6Pco4kCTBl6gnhcY">
         <img class="ikon" src="/imgs/ikoner/instagram.svg" alt="Instagram ikon" />
-        <!-- link to instagram mockup -->
-        <a href="">Instagram</a>
-      </div>
+        <p>Instagram</p>
+      </a>
       <div class="logo">
         <Logo />
       </div>
@@ -95,23 +95,23 @@ import Logo from "./Logo.astro";
   h2,
   p,
   a {
-    font-size: 0.8rem;
     color: var(--spring-wood50);
-  }
-
-  ul {
-    list-style: none;
-  }
-  ul a {
-    color: var(--spring-wood50);
-    font-family: futura-pt, sans-serif;
-    font-weight: 400;
     text-transform: none;
   }
 
   .red {
     color: var(--red700);
-    font-weight: 500;
+    font-weight: 600;
+  }
+
+  /* gå til column */
+  ul {
+    list-style: none;
+  }
+  ul a {
+    font-family: futura-pt, sans-serif;
+    font-weight: 400;
+    text-transform: none;
   }
 
   /* .red-hover:hover {
