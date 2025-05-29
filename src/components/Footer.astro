@@ -3,58 +3,63 @@ import Logo from "./Logo.astro";
 ---
 
 <footer>
-  <div class="grid">
-    <div>
-      <h1>Roskilde Karate og Selvsforsvar</h1>
-      <h2>Kontakt os</h2>
+  <div class="intro">
+    <h1>Roskilde Karate og Selvforsvar</h1>
+    <p class="intro-text">RKOS tilbyder træning for alle aldre og niveauer i et trygt og inkluderende fællesskab. Kom og bliv en del af et stærkt sammenhold med fokus på respekt, udvikling og kampsport.</p>
+  </div>
+
+  <div class="form">
+    <!-- form here -->
+  </div>
+
+  <div class="nav">
+    <h2>Gå til</h2>
+    <ul>
+      <li><a href="/" aria-label="Gå til Hjem side">Hjem</a></li>
+      <li><a href="/hold" aria-label="Gå til Hold side">Hold</a></li>
+      <li><a href="/kalender" aria-label="Gå til Kalender side">Kalender</a></li>
+      <li><a href="/om-os" aria-label="Gå til Om os side">Om os</a></li>
+      <li><a href="/kontakt" aria-label="Gå til Kontakt side">Kontakt</a></li>
+    </ul>
+  </div>
+
+  <div class="social">
+    <h2>Følg os på</h2>
+    <ul>
+      <li>
+        <a class="icon-text" aria-label="Gå til RKOS Facebook" href="https://www.facebook.com/profile.php?id=100064854705818">
+          <img class="icon" src="/imgs/ikoner/facebook.svg" alt="Facebook ikon" />
+          <p>Facebook</p>
+        </a>
+      </li>
+      <li>
+        <a class="icon-text" aria-label="Gå til RKOS Instagram" href="https://rmnmiybwdlwyqkveaakh.supabase.co/storage/v1/object/sign/img/RKOS-insta-mockup.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzQzNzAwOTAzLWJiOWMtNGI3ZC04MWRiLTU0NmExYTZjMGVlNyJ9.eyJ1cmwiOiJpbWcvUktPUy1pbnN0YS1tb2NrdXAucG5nIiwiaWF0IjoxNzQ4NTMxMjMyLCJleHAiOjE3ODAwNjcyMzJ9.UN5ZBvO-dzeu38IWeVIWvtYgLrmqBczqCRtmCzJ8JVc">
+          <img class="icon" src="/imgs/ikoner/instagram.svg" alt="Instagram ikon" />
+          <p>Instagram</p>
+        </a>
+      </li>
+    </ul>
+    <div class="logo">
+      <Logo />
+    </div>
+  </div>
+
+  <div class="contact">
+    <h2>Kontakt os</h2>
+    <a class="icon-text" href="tel:+4526196648">
+      <img class="icon telefon" src="imgs/ikoner/telefon-light.svg" alt="Telefon ikon" />
+      <div class="number">
+        <p>TLF NR.</p>
+        <b class="red">26 19 66 48</b>
+      </div>
+    </a>
+    <a class="icon-text" href="mailto:rkos2020@outlook.dk">
+      <img class="icon" src="imgs/ikoner/email-light.svg" alt="Email ikon" />
       <div>
-        <img class="ikon" src="imgs/ikoner/telefon-light.svg" alt="Telefon ikon" />
-        <div class="">
-          <p>TLF NR.</p>
-          <p class="red">26 19 66 48</p>
-        </div>
+        <p>EMAIL</p>
+        <b class="red">rkos2020@outlook.dk</b>
       </div>
-      <div>
-        <img class="ikon" src="imgs/ikoner/email-light.svg" alt="Email ikon" />
-        <div>
-          <p>EMAIL</p>
-          <a class="red" href="mailto:rkos2020@outlook.dk">rkos2020@outlook.dk</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="form">
-      <!-- set form here -->
-    </div>
-
-    <div class="pages">
-      <h2>Gå til</h2>
-      <nav>
-        <ul>
-          <li><a href="/" aria-label="Gå til Hjem side">Hjem</a></li>
-          <li><a href="/hold" aria-label="Gå til Hold side">Hold</a></li>
-          <li><a href="/kalender" aria-label="Gå til Kalender side">Kalender</a></li>
-          <li><a href="/om-os" aria-label="Gå til Om os side">Om os</a></li>
-          <li><a href="/kontakt" aria-label="Gå til Kontakt side">Kontakt</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <div class="social-grid">
-      <h2>Følg os på</h2>
-      <a class="social" aria-label="Gå til RKOS Facebook" href="https://www.facebook.com/profile.php?id=100064854705818">
-        <img class="ikon" src="/imgs/ikoner/facebook.svg" alt="Facebook ikon" />
-        <p>Facebook</p>
-      </a>
-      <!-- link to instagram mockup -->
-      <a class="social" aria-label="Gå til RKOS Instagram" href="https://rmnmiybwdlwyqkveaakh.supabase.co/storage/v1/object/sign/img/RKOS-insta-mockup.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzQzNzAwOTAzLWJiOWMtNGI3ZC04MWRiLTU0NmExYTZjMGVlNyJ9.eyJ1cmwiOiJpbWcvUktPUy1pbnN0YS1tb2NrdXAucG5nIiwiaWF0IjoxNzQ4NTMwOTA3LCJleHAiOjE3ODAwNjY5MDd9.awFowNN0v15TuIyYTXMtEhLxcfc6Pco4kCTBl6gnhcY">
-        <img class="ikon" src="/imgs/ikoner/instagram.svg" alt="Instagram ikon" />
-        <p>Instagram</p>
-      </a>
-      <div class="logo">
-        <Logo />
-      </div>
-    </div>
+    </a>
   </div>
 
   <div class="bottom">
@@ -65,79 +70,144 @@ import Logo from "./Logo.astro";
 
 <style>
   footer {
-    background-color: var(--mine-shaft950);
+    display: grid;
+    grid-template-columns: 2.5fr 0.5fr 1fr;
+    grid-template-rows: 0.5fr 1fr;
+    column-gap: 22px;
+    row-gap: 8px;
     padding: var(--m) var(--m) var(--S);
+    background-color: var(--mine-shaft950);
+    color: var(--spring-wood50);
+    padding-bottom: 30rem; /*husk at fjerne*/
   }
 
-  .grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+  .intro-text {
+    display: none;
   }
 
   .form {
     display: none;
   }
 
+  .nav,
   .social {
+    grid-row: span 2;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
-  .ikon {
-    width: 20px;
-    height: 20px;
+  .logo {
+    margin: auto 0 4px;
   }
 
-  h1 {
-    font-size: 1.6rem;
-    color: var(--spring-wood50);
+  .nav ul li {
+    margin-top: 6px;
   }
 
-  h2,
-  p,
-  a {
-    color: var(--spring-wood50);
-    text-transform: none;
+  .social ul li {
+    margin-bottom: 10px;
   }
 
-  .red {
-    color: var(--red700);
-    font-weight: 600;
+  .social h2 {
+    margin-bottom: 12px;
   }
 
-  /* gå til column */
-  ul {
-    list-style: none;
-  }
-  ul a {
-    font-family: futura-pt, sans-serif;
-    font-weight: 400;
-    text-transform: none;
+  .contact h2 {
+    margin-bottom: 6px;
   }
 
-  /* .red-hover:hover {
-    color: var(--red700);
-    font-weight: 500;
-    transition: color 0.6s ease;
-  } */
+  .icon-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .icon {
+    width: 15px;
+  }
+
+  .contact {
+    align-self: end;
+    padding-bottom: 3px;
+  }
+
+  .number {
+    margin: 4px 0;
+  }
 
   .bottom {
+    grid-column: span 3;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
   }
 
   .line {
-    rotate: 90deg;
+    width: 80%;
+    height: 1px;
+    margin-bottom: 0.5rem;
   }
 
+  b {
+    color: var(--red700);
+  }
+
+  /* a:hover {
+    color: var(--red700);
+    transition: color 0.6s ease;
+  }
+
+  a:hover,
+  a:hover p {
+    color: var(--red700);
+    transition: 0.6s ease;
+  } */
+
   @media (min-width: 900px) {
-    .form {
-      display: grid;
+    footer {
+      grid-template-columns: 2fr 2fr 1fr 2fr;
+      grid-template-rows: 1.5fr 1fr;
     }
 
-    .ikon {
-      width: 30px;
-      height: 30px;
+    .intro-text {
+      display: grid;
     }
+    .form {
+      grid-row: span 2;
+    }
+  }
+
+  /* fonts */
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 12px;
+  }
+
+  .nav h2,
+  .social h2 {
+    margin-top: 14px;
+  }
+
+  p {
+    font-size: 8px;
+    line-height: 12px;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  ul a,
+  a {
+    font-family: futura-pt, sans-serif;
+    text-transform: none;
+    color: var(--spring-wood50);
+    font-size: 8px;
   }
 </style>
