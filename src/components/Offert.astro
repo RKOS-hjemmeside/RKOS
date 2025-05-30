@@ -15,7 +15,6 @@ import SolidButton from "./SolidButton.astro";
     display: flex;
     flex-direction: column;
     min-height: 150;
-    margin-right: var(--s);
     border-top-right-radius: 70px;
     background-color: var(--red800);
     color: var(--spring-wood50);
@@ -24,6 +23,7 @@ import SolidButton from "./SolidButton.astro";
     align-items: center;
     padding: var(--s);
     padding-left: var(--m);
+    margin-right: var(--s);
   }
 
   h1 {
@@ -38,18 +38,14 @@ import SolidButton from "./SolidButton.astro";
   /** DESKTOP **/
   @media (min-width: 900px) {
     .tilbud {
-      border-top-right-radius: 200px;
-      padding: var(--s);
-      padding-left: var(--m);
+      border-top-right-radius: 150px;
+      padding: 20px 30px 20px 80px;
+      margin-right: var(--S);
     }
 
     h1 {
-      font-size: 3.5rem;
+      font-size: 2.8rem;
       font-weight: 400;
-      margin-left: 2%;
-    }
-    p {
-      margin-left: 2%;
     }
   }
 </style>
