@@ -10,6 +10,7 @@ const { link, text, variant, page } = Astro.props;
     display: block;
     text-align: center;
     font-size: 0.8rem;
+    cursor: pointer;
   }
 
   .black-white {
@@ -23,13 +24,11 @@ const { link, text, variant, page } = Astro.props;
   .black-white:hover {
     background-color: var(--spring-wood50);
     border: solid var(--spring-wood50);
-
     color: var(--mine-shaft950);
   }
   .black-red {
     background-color: var(--mine-shaft950);
     border: solid var(--mine-shaft950);
-
     color: var(--spring-wood50);
     border-radius: 10rem;
   }
@@ -66,6 +65,14 @@ const { link, text, variant, page } = Astro.props;
     border: solid var(--mine-shaft950);
     color: var(--spring-wood50);
   }
+
+  .check {
+    background-color: var(--mine-shaft950);
+    border: solid var(--mine-shaft950);
+    color: var(--spring-wood50);
+    border-radius: 10rem;
+  }
+
   /** DESKTOP **/
   @media (min-width: 900px) {
     a {
@@ -74,6 +81,9 @@ const { link, text, variant, page } = Astro.props;
     }
     .black-white {
       width: 300px;
+    }
+    .check {
+      width: 122px;
     }
   }
 </style>

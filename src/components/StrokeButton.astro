@@ -6,12 +6,15 @@ const { link, text, variant } = Astro.props;
 
 <style>
   a {
-    padding: 1rem;
+    padding: 0.6rem 1rem;
     display: block;
     text-align: center;
+    font-size: 0.8rem;
+    cursor: pointer;
   }
 
   .black-red {
+    background-color: white;
     border: solid var(--mine-shaft950);
     color: var(--mine-shaft950);
     border-radius: 10rem;
@@ -22,6 +25,7 @@ const { link, text, variant } = Astro.props;
   }
 
   .red-black {
+    background-color: none;
     border: solid var(--red700);
     color: var(--red700);
     border-radius: 10rem;
@@ -33,5 +37,12 @@ const { link, text, variant } = Astro.props;
   }
 
   @media (min-width: 900px) {
+    a {
+      padding: 1rem;
+      font-size: 1rem;
+    }
+    .black-red {
+      width: 122px;
+    }
   }
 </style>

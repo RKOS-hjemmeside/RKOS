@@ -31,8 +31,11 @@ const { data } = Astro.props;
      For 'Fredags Træning' og 'Søndags Træning' konverteres det til 'ekstra-training'.
      Ellers omdannes activity-teksten til et id-venligt format (små bogstaver, bindestreger og uden danske specialtegn). -->
       </div>
-      <div class="button" id="check">
+      <div id="rb" class="active">
         <SolidButton variant="red-black" text=`${data.book}` />
+      </div>
+      <div id="check" class="noshow">
+        <SolidButton variant="check" text="✓" />
       </div>
     </div>
   </div>
@@ -76,7 +79,13 @@ const { data } = Astro.props;
     display: flex;
     justify-content: space-around;
   }
+  .active {
+    display: block;
+  }
 
+  .noshow {
+    display: none;
+  }
   p {
     font-size: 0.8rem;
   }
@@ -98,6 +107,7 @@ const { data } = Astro.props;
       font-size: 1.3rem;
     }
 
+    .active,
     .button {
       width: 122px;
     }
@@ -105,14 +115,23 @@ const { data } = Astro.props;
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const wrapper = document.getElementById("check");
-    const button = wrapper?.querySelector("a.red-black");
+  window.addEventListener("DOMContentLoaded", () => {
+    console.log("Script kører, DOM klar");
 
-    if (button) {
-      wrapper.addEventListener("click", (e) => {
-        e.preventDefault(); // Fjern hvis det ikke er nødvendigt
-        button.textContent = "✓";
+    const rb = document.getElementById("rb");
+    const check = document.getElementById("check");
+
+    console.log("rb:", rb);
+    console.log("check:", check);
+
+    if (rb && check) {
+      rb.addEventListener("click", () => {
+        console.log("Klik på rb registreret");
+        rb.classList.add("noshow"); // Tilføjer 'noshow'
+        rb.classList.remove("active"); // Fjerner 'noshow'
+
+        check.classList.remove("noshow"); // Fjerner 'noshow'
+        check.classList.add("active"); // Tilføjer 'noshow'
       });
     }
   });
