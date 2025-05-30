@@ -52,11 +52,6 @@ const { data } = Astro.props;
     text-transform: uppercase;
   }
 
-  /* Vi bruger global fordi selvom der er en specific font-family til komponentet, så lytter den til det vi skriver nu */
-  :global(.buttons a) {
-    font-size: 0.6rem;
-  }
-
   .event-info {
     display: grid;
     gap: 6px;
@@ -100,7 +95,7 @@ const { data } = Astro.props;
     }
 
     .button {
-      width: 116px;
+      width: 122px;
     }
   }
 </style>
