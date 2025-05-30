@@ -4,7 +4,7 @@ import SolidButton from "./SolidButton.astro";
 ---
 
 <header>
-  <div class="logo">
+  <div class="logo grow">
     <Logo />
   </div>
   <div class="button">
@@ -106,6 +106,7 @@ import SolidButton from "./SolidButton.astro";
     color: var(--spring-wood50);
     font-family: futura-pt, sans-serif;
     font-weight: 400;
+    font-size: 1.5rem;
   }
 
   ul a:hover {
@@ -190,6 +191,10 @@ import SolidButton from "./SolidButton.astro";
       grid-column: 3;
       transform: none;
       justify-self: end;
+    }
+
+    ul a {
+      font-size: 1.2rem;
     }
   }
 </style>
