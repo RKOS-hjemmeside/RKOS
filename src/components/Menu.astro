@@ -4,7 +4,7 @@ import SolidButton from "./SolidButton.astro";
 ---
 
 <header>
-  <div class="logo">
+  <div class="logo grow">
     <Logo />
   </div>
   <div class="button">
@@ -69,10 +69,6 @@ import SolidButton from "./SolidButton.astro";
     z-index: 1000;
   }
 
-  .logo {
-    width: 100px;
-  }
-
   .nav {
     display: flex;
     position: relative;
@@ -106,6 +102,7 @@ import SolidButton from "./SolidButton.astro";
     color: var(--spring-wood50);
     font-family: futura-pt, sans-serif;
     font-weight: 400;
+    font-size: 1.3rem;
   }
 
   ul a:hover {
@@ -150,7 +147,7 @@ import SolidButton from "./SolidButton.astro";
   }
 
   .button {
-    width: 200px;
+    width: 144px;
     text-align: center;
   }
 
@@ -162,7 +159,6 @@ import SolidButton from "./SolidButton.astro";
 
     .logo {
       justify-self: start;
-      width: 124px;
     }
 
     .burger {
@@ -190,6 +186,11 @@ import SolidButton from "./SolidButton.astro";
       grid-column: 3;
       transform: none;
       justify-self: end;
+      width: 200px;
+    }
+
+    ul a {
+      font-size: 1.2rem;
     }
   }
 </style>

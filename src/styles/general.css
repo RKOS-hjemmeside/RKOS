@@ -73,6 +73,7 @@ p {
   font-family: futura-pt, sans-serif;
   font-size: 0.8rem;
   line-height: 1.2rem;
+  font-weight: 200;
 }
 
 a {
@@ -86,6 +87,11 @@ a {
 
 a:hover {
   transition: 0.6s ease;
+}
+
+.red {
+  color: var(--red700);
+  font-weight: 500;
 }
 
 @media (min-width: 900px) {
@@ -114,4 +120,14 @@ a:hover {
   width: 1px;
   height: 30px;
   background-color: var(--mine-shaft300);
+}
+
+/* hover effect logo */
+.grow {
+  transition: 1s ease;
+}
+
+.grow:hover {
+  transform: scale(1.1);
+  transition: 1s ease;
 }

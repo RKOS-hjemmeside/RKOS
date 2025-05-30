@@ -8,7 +8,7 @@ import Map from "../components/Map.astro";
   <!-- components -->
   <article class="hero-section">
     <video autoplay muted loop playsinline>
-      <source src="/public/videos/om-os.mov" type="video/mp4" />
+      <source src="/videos/om-os.mov" type="video/mp4" />
     </video>
   </article>
   <article class="intro">
@@ -17,7 +17,7 @@ import Map from "../components/Map.astro";
       Roskilde Karate og Selvforsvar (RKOS) er en klub for alle, uanset alder, køn eller fysisk niveau. Hos os handler karate ikke kun om slag og spark, det er en mentalitet og en rejse, vi udvikler sammen og hver for sig. Vi skaber et trygt rum, hvor respekt og fællesskab er i centrum, både når vi træner kamp og sparring. <br /><br />
       I styrke- og udholdenhedstræningen udfordrer vi os selv til at yde vores bedste, og lidt mere. Gennem selvforsvar lærer vi at forstå kroppens svage punkter, men endnu vigtigere:
     </p>
-    <p>Vi opdager, hvor stærke vi egentlig er.</p>
+    <p class="red">Vi opdager, hvor stærke vi egentlig er.</p>
     <div class="grid_1-1-1-1">
       <div class="grid-item">
         <h2>2</h2>
@@ -141,6 +141,11 @@ import Map from "../components/Map.astro";
   .icon {
     width: 50px;
     height: 50px;
+  }
+
+  .red {
+    color: var(--red700);
+    font-weight: 500;
   }
 
   @media (min-width: 720px) {
