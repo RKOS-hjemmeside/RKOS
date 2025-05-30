@@ -2,7 +2,7 @@
 const { title, hold, age, range, activity, level, focus, key, instructor, name, day1, day2, text1, text2 } = Astro.props;
 ---
 
-<article>
+<article id={hold}>
   <div class="text-o-img">
     <h1>{title}</h1>
     <img src=`/imgs/${hold}.webp` alt="Billede af karateholdet" />
@@ -70,7 +70,7 @@ const { title, hold, age, range, activity, level, focus, key, instructor, name, 
 
   @media (min-width: 900px) {
     article {
-      margin: 20px var(--L) 0 var(--L);
+      margin: 30px var(--L) 0 var(--L);
     }
     .text-o-img img {
       border-radius: 20px 20px 0 0;
