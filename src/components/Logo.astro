@@ -3,5 +3,27 @@
 ---
 
 <a href="/" aria-label="Gå til hjem side">
-  <img src="/imgs/ikoner/logo.svg" alt="Logo" />
+  <img class="logo-mobil" src="/imgs/ikoner/logo-mobil.svg" alt="Logo" />
+  <img class="logo-desktop" src="/imgs/ikoner/logo.svg" alt="Logo" />
 </a>
+
+<style>
+  .logo-mobil {
+    width: 27px;
+  }
+  .logo-desktop {
+    display: none;
+  }
+  @media (min-width: 900px) {
+    img {
+      width: 124px;
+    }
+    .logo-mobil {
+      display: none;
+    }
+
+    .logo-desktop {
+      display: initial;
+    }
+  }
+</style>
