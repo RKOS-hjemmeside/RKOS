@@ -43,3 +43,16 @@ console.log("data", data);
     }
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const redBlackBtn = document.querySelector("a.red-black");
+
+    if (redBlackBtn) {
+      redBlackBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        redBlackBtn.textContent = "tilmedlt";
+      });
+    }
+  });
+</script>
