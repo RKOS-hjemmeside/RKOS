@@ -14,11 +14,11 @@ import Kanku from "../components/Kanku.astro";
   <!-- components -->
   <div class="hero-container">
     <Hero />
-    <div class="down-button">
+    <div id="intro" class="down-button">
       <SolidButton variant="red-white scroll-down" link="#intro" text="↓" page="intro" />
     </div>
   </div>
-  <article id="intro">
+  <article>
     <img src="/imgs/parade.webp" alt="Karate parade" />
     <div class="info">
       <h2>Er du klar til selvforsvar?</h2>
@@ -47,14 +47,16 @@ import Kanku from "../components/Kanku.astro";
   }
   article {
     display: grid;
-    grid-template-columns: 0.8fr 1fr;
+    grid-template-columns: 1fr 1fr;
     margin: 20px;
     gap: var(--s);
+    margin: var(--m);
   }
-
   article img {
-    align-self: center;
-    margin-bottom: var(--m);
+    align-self: start;
+    justify-self: center;
+    margin-top: 4px;
+    max-height: 346px;
   }
 
   #button {
@@ -65,7 +67,7 @@ import Kanku from "../components/Kanku.astro";
   @media (min-width: 900px) {
     article {
       grid-template-columns: 1fr 1fr;
-      margin: 0 var(--L) var(--m) var(--L);
+      margin: var(--M) var(--L) var(--M) var(--L);
       gap: var(--S);
     }
 
