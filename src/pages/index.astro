@@ -31,11 +31,57 @@ import Kanku from "../components/Kanku.astro";
     <img src="/imgs/parade.webp" alt="Karate parade" />
   </article>
   <Offert />
-  <Card />
-  <Card />
-  <Card />
+  <div>
+    <h1>VORES HOLD</h1>
+    <!-- karrusel -->
+    <div class="carousel-wrapper">
+      <button class="carousel-btn left" aria-label="Forrige">‹</button>
+
+      <div class="card-carousel" id="card-carousel">
+        <div class="carousel-card">
+          <Card title="JUNIOR HOLD" hold="junior-hold" text="Holdet er egnet til børn alder 6-15 år. Der er træning hver mandag og torsdag, klokken 17:30 - 18:30." />
+        </div>
+        <div class="carousel-card">
+          <Card title="SENIOR HOLD" hold="senior-hold" text="Holdet er egnet til alle - 15 år og ældre. Der er træning hver mandag og torsdag, klokken 18:00 - 19:30." />
+        </div>
+        <div class="carousel-card">
+          <Card title="EKSTRA TRÆNING" hold="ekstra-training" text="Vi tilbyder også ekstra træning i form af kampdag, hver anden fredag, samt skov-træning hver søndag." />
+        </div>
+      </div>
+
+      <button class="carousel-btn right" aria-label="Næste">›</button>
+    </div>
+  </div>
   <Citation />
   <Kanku />
+
+  <script type="module">
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll(".carousel-card");
+      const leftBtn = document.querySelector(".carousel-btn.left");
+      const rightBtn = document.querySelector(".carousel-btn.right");
+
+      let current = 0;
+
+      function showCard(index) {
+        cards.forEach((card, i) => {
+          card.classList.toggle("active", i === index);
+        });
+      }
+
+      leftBtn.addEventListener("click", () => {
+        current = (current - 1 + cards.length) % cards.length;
+        showCard(current);
+      });
+
+      rightBtn.addEventListener("click", () => {
+        current = (current + 1) % cards.length;
+        showCard(current);
+      });
+
+      showCard(current);
+    });
+  </script>
 </Layout>
 
 <style>
@@ -85,6 +131,58 @@ import Kanku from "../components/Kanku.astro";
     z-index: 10;
   }
 
+  /** cards og slide **/
+  h1 {
+    text-align: center;
+    margin-top: var(--s);
+  }
+
+  .carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .card-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 370px;
+    overflow: hidden;
+  }
+
+  .carousel-card {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    width: 100%;
+  }
+
+  .carousel-card.active {
+    opacity: 1;
+    pointer-events: auto;
+    position: relative;
+  }
+
+  .carousel-btn {
+    background: none;
+    color: var(--mine-shaft300);
+    border: none;
+    font-size: 3rem;
+    z-index: 10;
+  }
+
+  .left {
+    margin-left: 30px;
+    margin-right: 15px;
+  }
+  .right {
+    margin-right: 30px;
+    margin-left: 15px;
+  }
+
   @media (min-width: 900px) {
     article {
       display: grid;
@@ -108,6 +206,32 @@ import Kanku from "../components/Kanku.astro";
     article img {
       border-radius: 30px 0 0 30px;
       order: -1;
+    }
+
+    .carousel-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--m);
+    }
+
+    .carousel-btn {
+      display: none;
+    }
+
+    .card-carousel {
+      display: flex;
+      gap: var(--m);
+      max-width: none;
+      position: static;
+      overflow: visible;
+    }
+
+    .carousel-card {
+      opacity: 1;
+      position: static;
+      pointer-events: auto;
+      display: block;
+      flex: 1 1 0;
     }
   }
 </style>
