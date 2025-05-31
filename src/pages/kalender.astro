@@ -13,19 +13,77 @@ const options = {
 };
 
 const request = await fetch(url, options);
-const data = await request.json();
+let data = await request.json();
 
 console.log("data", data);
 ---
 
 <Layout title="Kalender" meta="Hold dig opdateret på alle kommende træninger hos Roskilde Karate og Selvforsvar. Se tidspunkter og detaljer for alle hold, for begyndere og øvede.">
+  <div class="filters">
+    <select id="activityFilter">
+      <option value="">HOLD</option>
+      <option value="Junior Hold">Junior Hold</option>
+      <option value="Senior Hold">Senior Hold</option>
+      <option value="Fredags Træning">Fredags Træning</option>
+      <option value="Søndags Træning">Søndags Træning</option>
+    </select>
+
+    <select id="monthFilter">
+      <option value="">MÅNED</option>
+      <option value="06">Juni</option>
+      <option value="07">Juli</option>
+    </select>
+  </div>
+
   <div class="cards">
     {
       data.map((event) => {
-        return <CalenderCard data={event} />;
+        const activity = event.activity || ""; /* sikre at der kan tages fat i activity-værdien, eller evt. erstatter den med "" */
+        const month = event.date?.split("-")[1] || ""; /* ligeledes her tager js fat 'date' fra API'et, 
+                                                        men ved at bruge .split("-") deler den formatet (YYYY-MM-DD) op og kan dermed bruge [1] til at hente måneden.
+                                                        skulle event.date evt. være undefined sikre ?. (optional chaining) at vi ikke får en fejl og erstattes med "" */
+        return (
+          <div class="card-wrapper" data-activity={activity} data-month={month}>
+            <CalenderCard data={event} />
+          </div>
+        );
       })
     }
   </div>
+
+  <!-- Vi har fået hjælp af CHATgpt til at få script til at virke -->
+  <!-- Vi havde problemer med at filtere i astro, da hvis man sætter js i ts bliver det renderet inden siden loader -->
+  <!-- Dertil at skulle tilføje kode i linje 45 og 46 for at filter ville samarbejde med CalenderCard og så vi altdog får en gyldig værdi -->
+
+  <script type="module">
+    window.addEventListener("DOMContentLoaded", () => {
+      const activityFilter = document.getElementById("activityFilter");
+      const monthFilter = document.getElementById("monthFilter");
+      const cards = document.querySelectorAll(".card-wrapper");
+
+      function applyFilters() {
+        const selectedActivity = activityFilter.value;
+        const selectedMonth = monthFilter.value;
+
+        /* gennemgår alle cards og læser deres data-"" */
+        cards.forEach((card) => {
+          const cardActivity = card.getAttribute("data-activity");
+          const cardMonth = card.getAttribute("data-month");
+
+          /* dette er essentielt default, for hvis der ikke er valgt/klikket i filteret vises alle kort */
+          /* når der vælges/klikkes på et filter bliver de kort der machter værdierne vist */
+          const activityMatch = selectedActivity === "" || cardActivity === selectedActivity;
+          const monthMatch = selectedMonth === "" || cardMonth === selectedMonth;
+
+          /* i tilfældet at begge filtre er i brug vil cards der har begge værdier blive vist, ellers skjules de */
+          card.style.display = activityMatch && monthMatch ? "block" : "none";
+        });
+      }
+
+      activityFilter.addEventListener("change", applyFilters);
+      monthFilter.addEventListener("change", applyFilters);
+    });
+  </script>
 </Layout>
 
 <style>
@@ -36,10 +94,58 @@ console.log("data", data);
     margin: 0 var(--s);
   }
 
+  .filters {
+    display: flex;
+    margin: var(--s) var(--s) 0 var(--s);
+    gap: clamp(19px, var(--s), 21px);
+    align-items: center;
+  }
+
+  select {
+    background-color: var(--spring-wood50);
+    border: solid var(--mine-shaft950);
+    color: var(--mine-shaft950);
+    border-radius: 10rem;
+    font-family: "oswald", sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    transition: 0.6s ease;
+    text-align: center;
+    padding: 0.6rem 0.9rem 0.6rem 1.2rem;
+    min-width: 195px;
+  }
+
+  select:hover {
+    border: solid var(--red700);
+    color: var(--red700);
+  }
+
+  option {
+    font-family: futura-pt, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 200;
+  } /*styling virker ikke firefox, men i gør i chrome*/
+
   @media (min-width: 900px) {
     .cards {
       margin: 0 var(--S);
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .filters {
+      margin: var(--S) var(--s) var(--s) var(--S);
+      gap: clamp(var(--s), 25px, 5%);
+    }
+
+    select {
+      font-size: 1.8rem;
+      padding: 10px 0 10px var(--s);
+      min-width: 250px;
+    }
+    option {
+      font-family: futura-pt, sans-serif;
+      font-size: 1rem;
+      font-weight: 200;
     }
   }
 </style>
