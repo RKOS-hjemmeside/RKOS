@@ -2,6 +2,7 @@
 import "../styles/general.css";
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+import SolidButton from "../components/SolidButton.astro";
 import StrokeButton from "../components/StrokeButton.astro";
 import Offert from "../components/Offert.astro";
 import Card from "../components/Card.astro";
@@ -11,8 +12,13 @@ import Kanku from "../components/Kanku.astro";
 
 <Layout>
   <!-- components -->
-  <Hero />
-  <article>
+  <div class="hero-container">
+    <Hero />
+    <div class="down-button">
+      <SolidButton variant="red-white scroll-down" link="#intro" text="↓" page="intro" />
+    </div>
+  </div>
+  <article id="intro">
     <img src="/imgs/parade.webp" alt="Karate parade" />
     <div class="info">
       <h2>Er du klar til selvforsvar?</h2>
@@ -26,36 +32,46 @@ import Kanku from "../components/Kanku.astro";
   <Card />
   <Citation />
   <Kanku />
+</Layout>
 
-  <style>
+<style>
+  .hero-container {
+    position: relative;
+    width: 100%;
+  }
+
+  .down-button {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+  }
+  article {
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    margin: 20px;
+    gap: var(--s);
+  }
+
+  article img {
+    align-self: center;
+    margin-bottom: var(--m);
+  }
+
+  #button {
+    margin-top: 0.8rem;
+    width: 200px;
+  }
+
+  @media (min-width: 900px) {
     article {
-      display: grid;
-      grid-template-columns: 0.8fr 1fr;
-      margin: 20px;
-      gap: var(--s);
-    }
-
-    article img {
-      align-self: center;
-      margin-bottom: var(--m);
+      grid-template-columns: 1fr 1fr;
+      margin: 0 var(--L) var(--m) var(--L);
+      gap: var(--S);
     }
 
     #button {
-      margin-top: 0.8rem;
-      width: 200px;
+      width: 300px;
+      margin-top: var(--m);
     }
-
-    @media (min-width: 900px) {
-      article {
-        grid-template-columns: 1fr 1fr;
-        margin: 0 var(--L) var(--m) var(--L);
-        gap: var(--S);
-      }
-
-      #button {
-        width: 300px;
-        margin-top: var(--m);
-      }
-    }
-  </style>
-</Layout>
+  }
+</style>

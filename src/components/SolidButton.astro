@@ -2,7 +2,7 @@
 const { link, text, variant, page } = Astro.props;
 ---
 
-<a class={variant} href={link} aria-label=`Go to ${page} side`>{text}</a>
+<a class={variant} href={link} aria-label=`Goes to ${page}`>{text}</a>
 
 <style>
   a {
@@ -73,6 +73,15 @@ const { link, text, variant, page } = Astro.props;
     border-radius: 10rem;
   }
 
+  /* scroll up/down button */
+  .scroll-down,
+  .scroll-up {
+    width: 20px;
+    height: 20px;
+    font-size: 7px;
+    padding: 0;
+  }
+
   /** DESKTOP **/
   @media (min-width: 900px) {
     a {
@@ -84,6 +93,13 @@ const { link, text, variant, page } = Astro.props;
     }
     .check {
       width: 122px;
+    }
+
+    .scroll-down,
+    .scroll-up {
+      width: 50px;
+      height: 50px;
+      font-size: 30px;
     }
   }
 </style>
