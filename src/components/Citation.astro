@@ -12,7 +12,7 @@
 
 <style>
   article {
-    background-image: url("imgs/citation.webp"); /* Replace with your actual image path */
+    background-image: url("imgs/citation.webp");
     background-size: cover;
     background-position: center;
     height: 300px;
@@ -26,25 +26,30 @@
   }
 
   .quote-box {
-    padding: 1.5rem 2rem;
+    padding: var(--S) var(--l);
     max-width: 700px;
     width: 100%;
   }
 
-  h2 {
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
-  }
-
   #quote {
     font-style: italic;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
     margin-bottom: 0.5rem;
+    margin: 8px 0 var(--s);
   }
 
   @media (min-width: 900px) {
     article {
       height: 400px;
+    }
+
+    .quote-box {
+      padding: var(--S) var(--m);
+    }
+
+    #quote {
+      font-size: 1.6rem;
     }
   }
 </style>
