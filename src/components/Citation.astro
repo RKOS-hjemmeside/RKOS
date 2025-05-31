@@ -1,0 +1,76 @@
+---
+
+---
+
+<article>
+  <div class="quote-box">
+    <h2>Fra vores medlemmer</h2>
+    <p id="quote">"Et godt sted at overskride personlige grænser.""</p>
+    <p id="author">"Anonym klub medlem"</p>
+  </div>
+</article>
+
+<style>
+  article {
+    background-image: url("imgs/citation.webp");
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    margin-top: var(--m);
+  }
+
+  .quote-box {
+    padding: var(--S) var(--l);
+    max-width: 700px;
+    width: 100%;
+  }
+
+  #quote {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    margin: 8px 0 var(--s);
+  }
+
+  @media (min-width: 900px) {
+    article {
+      height: 400px;
+    }
+
+    .quote-box {
+      padding: var(--S) var(--m);
+    }
+
+    #quote {
+      font-size: 1.6rem;
+    }
+  }
+</style>
+
+<!-- Hjælp fra ChatGPT til at lave en carousel effekt hvor den ændre citat og navn efter 8s -->
+
+<script>
+  const quotes = [
+    { text: '"God sund disciplin under træningen, men før og efter taler vi godt sammen på tværs af alder, køn og ikke mindst bæltegrader', author: "Pia" },
+    { text: '"Man får lov at rykke sig meget, men under forhold mærket af tryghed og respekt for individet."', author: "Chelsie" },
+    { text: '"Før jeg startede i RKOS, kunne jeg dårligt tage fem armbøjninger. Her 4 måneder senere, kan jeg tage tyve på en god dag. "', author: "Mike Wenøe" },
+    { text: '"Træning, teknik og trælår"', author: "Nette" },
+  ];
+
+  let index = 0;
+  const quoteEl = document.getElementById("quote");
+  const authorEl = document.getElementById("author");
+
+  setInterval(() => {
+    index = (index + 1) % quotes.length;
+    quoteEl.textContent = quotes[index].text;
+    authorEl.textContent = quotes[index].author;
+  }, 8000); // hver 8s
+</script>

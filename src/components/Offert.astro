@@ -3,9 +3,8 @@ import SolidButton from "./SolidButton.astro";
 ---
 
 <div class="tilbud">
-  <h1>FØRSTE GANG MED KARATE?</h1>
-  <h1>FÅ FØRSTE <b>MÅNED</b> GRATIS</h1>
-  <p>Få en stærk start – træn op til 14 gange!</p>
+  <h1>FØRSTE GANG MED KARATE? FÅ FØRSTE <b>MÅNED</b> GRATIS</h1>
+  <p>Få en stærk start - træn op til 14 gange!</p>
 
   <SolidButton variant="black-white" text="KONTAKT" link="/kontakt" page="Kontakt" />
 </div>
@@ -14,7 +13,6 @@ import SolidButton from "./SolidButton.astro";
   .tilbud {
     display: flex;
     flex-direction: column;
-    min-height: 150;
     border-top-right-radius: 70px;
     background-color: var(--red800);
     color: var(--spring-wood50);
@@ -27,24 +25,25 @@ import SolidButton from "./SolidButton.astro";
   }
 
   h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 400;
+    max-width: 22ch;
   }
 
   p {
-    margin: var(--s);
+    margin: 4px 0 var(--s);
   }
 
   /** DESKTOP **/
   @media (min-width: 900px) {
     .tilbud {
-      border-top-right-radius: 150px;
-      padding: 20px 30px 20px 80px;
+      border-top-right-radius: 130px;
+      padding: 42px 30px 42px 80px;
       margin-right: var(--S);
     }
 
     h1 {
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       font-weight: 400;
     }
   }
