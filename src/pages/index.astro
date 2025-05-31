@@ -17,6 +17,10 @@ import Kanku from "../components/Kanku.astro";
     <div id="intro" class="down-button">
       <SolidButton variant="red-white scroll-down" link="#intro" text="↓" page="intro" />
     </div>
+    <video class="motion-graphic" autoplay muted loop playsinline>
+      <source src="/videos/kianji-motion.webm" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   </div>
   <article>
     <img src="/imgs/parade.webp" alt="Karate parade" />
@@ -46,11 +50,10 @@ import Kanku from "../components/Kanku.astro";
     left: 1rem;
   }
   article {
+    margin: var(--s);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 20px;
-    gap: var(--s);
-    margin: var(--m);
+    gap: 10px;
   }
   article img {
     align-self: start;
@@ -59,9 +62,23 @@ import Kanku from "../components/Kanku.astro";
     max-height: 346px;
   }
 
+  .info p {
+    max-width: 55ch;
+  }
+
   #button {
     margin-top: 0.8rem;
     width: 200px;
+  }
+
+  .motion-graphic {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    width: 39px;
+    height: auto;
+    transform: translateY(50%);
+    z-index: 10;
   }
 
   @media (min-width: 900px) {
@@ -74,6 +91,11 @@ import Kanku from "../components/Kanku.astro";
     #button {
       width: 300px;
       margin-top: var(--m);
+    }
+
+    .motion-graphic {
+      width: 120px;
+      bottom: 5%;
     }
   }
 </style>
