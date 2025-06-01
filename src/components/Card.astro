@@ -17,29 +17,32 @@ const { title, hold, text } = Astro.props;
 <style>
   article {
     display: grid;
-    grid-auto-rows: 0.5fr 1fr;
+    grid-template-rows: auto 1fr;
     background-color: white;
+    justify-self: center;
     margin: 10px;
     border-radius: var(--s);
     box-shadow: 0 4px 12px rgba(61, 61, 60, 0.2); /* det er : --mine-shaft900: #3d3d3c; */
-    max-width: 370px;
-    min-height: 385px;
+    max-width: clamp(320px, 80vw, 400px) /*370px*/;
+    min-height: 345px;
+    overflow: hidden;
   }
   article img {
     width: 100%;
     border-radius: var(--s) var(--s) 0 0;
-    aspect-ratio: 16 / 8;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
   }
   .info {
-    display: grid;
-    grid-auto-rows: 0fr 0fr 1fr;
-    padding: var(--s) var(--m) var(--s);
-    row-gap: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px var(--m) var(--s);
+    row-gap: 15px;
+    min-height: 75px;
   }
-
-  .button {
-    width: 150px;
-    margin-top: var(--s);
+  @media (min-width: 900px) {
+    h2 {
+      font-size: clamp(1.3rem, 3vw, 2.3rem);
+    }
   }
 </style>

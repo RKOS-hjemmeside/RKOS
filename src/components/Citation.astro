@@ -5,8 +5,8 @@
 <article>
   <div class="quote-box">
     <h2>Fra vores medlemmer</h2>
-    <p id="quote">"Et godt sted at overskride personlige grænser.""</p>
-    <p id="author">"Anonym klub medlem"</p>
+    <p id="quote">"Et godt sted at overskride personlige grænser."</p>
+    <p id="author">Anonym klub medlem</p>
   </div>
 </article>
 
@@ -17,6 +17,7 @@
     background-position: center;
     height: 300px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -27,16 +28,26 @@
 
   .quote-box {
     padding: var(--S) var(--l);
-    max-width: 700px;
-    width: 100%;
+    min-width: 55ch;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
   }
-
+  p {
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+  }
   #quote {
     font-style: italic;
     font-size: 1.1rem;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
     margin: 8px 0 var(--s);
+  }
+
+  #author {
+    font-weight: 400;
   }
 
   @media (min-width: 900px) {
@@ -50,6 +61,7 @@
 
     #quote {
       font-size: 1.6rem;
+      padding: var(--m);
     }
   }
 </style>
@@ -58,10 +70,10 @@
 
 <script>
   const quotes = [
-    { text: '"God sund disciplin under træningen, men før og efter taler vi godt sammen på tværs af alder, køn og ikke mindst bæltegrader', author: "Pia" },
+    { text: '"God sund disciplin under træningen, men før og efter taler vi godt sammen på tværs af alder, køn og ikke mindst bæltegrader."', author: "Pia" },
     { text: '"Man får lov at rykke sig meget, men under forhold mærket af tryghed og respekt for individet."', author: "Chelsie" },
-    { text: '"Før jeg startede i RKOS, kunne jeg dårligt tage fem armbøjninger. Her 4 måneder senere, kan jeg tage tyve på en god dag. "', author: "Mike Wenøe" },
-    { text: '"Træning, teknik og trælår"', author: "Nette" },
+    { text: '"Før jeg startede i RKOS, kunne jeg dårligt tage fem armbøjninger. Her 4 måneder senere, kan jeg tage tyve på en god dag."', author: "Mike Wenøe" },
+    { text: '"Træning, teknik og trælår."', author: "Nette" },
   ];
 
   let index = 0;

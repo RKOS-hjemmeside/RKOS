@@ -31,13 +31,13 @@ import Kanku from "../components/Kanku.astro";
     <img src="/imgs/parade.webp" alt="Karate parade" />
   </article>
   <Offert />
-  <div>
+  <div class="hold-sektion">
     <h1>VORES HOLD</h1>
     <!-- karrusel -->
     <div class="carousel-wrapper">
       <button class="carousel-btn left" aria-label="Forrige">‹</button>
 
-      <div class="card-carousel" id="card-carousel">
+      <div class="carousel" id="carousel">
         <div class="carousel-card">
           <Card title="JUNIOR HOLD" hold="junior-hold" text="Holdet er egnet til børn alder 6-15 år. Der er træning hver mandag og torsdag, klokken 17:30 - 18:30." />
         </div>
@@ -48,10 +48,15 @@ import Kanku from "../components/Kanku.astro";
           <Card title="EKSTRA TRÆNING" hold="ekstra-training" text="Vi tilbyder også ekstra træning i form af kampdag, hver anden fredag, samt skov-træning hver søndag." />
         </div>
       </div>
-
       <button class="carousel-btn right" aria-label="Næste">›</button>
     </div>
+    <div class="desktop-version">
+      <Card title="JUNIOR HOLD" hold="junior-hold" text="Holdet er egnet til børn alder 6-15 år. Der er træning hver mandag og torsdag, klokken 17:30 - 18:30." />
+      <Card title="SENIOR HOLD" hold="senior-hold" text="Holdet er egnet til alle - 15 år og ældre. Der er træning hver mandag og torsdag, klokken 18:00 - 19:30." />
+      <Card title="EKSTRA TRÆNING" hold="ekstra-training" text="Vi tilbyder også ekstra træning i form af kampdag, hver anden fredag, samt skov-træning hver søndag." />
+    </div>
   </div>
+
   <Citation />
   <Kanku />
 
@@ -131,7 +136,10 @@ import Kanku from "../components/Kanku.astro";
     z-index: 10;
   }
 
-  /** cards og slide **/
+  .hold-sektion {
+    margin: var(--s);
+  }
+  /** cards & carousel **/
   h1 {
     text-align: center;
     margin-top: var(--s);
@@ -143,9 +151,10 @@ import Kanku from "../components/Kanku.astro";
     align-items: center;
     justify-content: center;
     width: 100%;
+    visibility: visible;
   }
 
-  .card-carousel {
+  .carousel {
     position: relative;
     width: 100%;
     max-width: 370px;
@@ -183,11 +192,20 @@ import Kanku from "../components/Kanku.astro";
     margin-left: 15px;
   }
 
+  .desktop-version {
+    /*display: none;*/
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
   @media (min-width: 900px) {
     article {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      margin: var(--M) var(--L) var(--M) var(--L);
+      margin: var(--l) var(--M) var(--M) var(--l);
       gap: var(--S);
       align-self: start;
       justify-self: center;
@@ -206,32 +224,35 @@ import Kanku from "../components/Kanku.astro";
     article img {
       border-radius: 30px 0 0 30px;
       order: -1;
+      margin-top: 0;
     }
 
-    .carousel-wrapper {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--m);
+    .hold-sektion {
+      margin: var(--l) auto var(--l) auto;
+      max-width: 1200px;
+      box-sizing: border-box;
     }
-
+    /** cards & carousel **/
+    .carousel-wrapper,
+    .carousel,
     .carousel-btn {
+      /*display: none !important; */
+      visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
       display: none;
     }
-
-    .card-carousel {
-      display: flex;
-      gap: var(--m);
-      max-width: none;
-      position: static;
-      overflow: visible;
-    }
-
-    .carousel-card {
-      opacity: 1;
-      position: static;
-      pointer-events: auto;
-      display: block;
-      flex: 1 1 0;
+    .desktop-version {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 0.8rem auto;
+      gap: clamp(1px, 1vh, 10px);
+      visibility: visible;
+      position: relative;
+      justify-items: center;
+      box-sizing: border-box;
     }
   }
 </style>
