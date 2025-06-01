@@ -9,7 +9,7 @@ const { title, hold, text } = Astro.props;
     <h2>{title}</h2>
     <p>{text}</p>
     <div class="button">
-      <StrokeButton variant="black-red" text="Læs mere" page="hold" link="/hold.astro" />
+      <StrokeButton variant="black-red" text="Læs mere" page="hold" link={`/hold#${hold}`} />
     </div>
   </div>
 </article>
