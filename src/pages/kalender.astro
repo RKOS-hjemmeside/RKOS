@@ -38,7 +38,7 @@ console.log("data", data);
   <div class="cards">
     {
       data.map((event) => {
-        const activity = event.activity || ""; /* sikre at der kan tages fat i activity-værdien, eller evt. erstatter den med "" */
+        const activity = event?.activity || ""; /* sikre at der kan tages fat i activity-værdien, eller evt. erstatter den med "" */
         const month = event.date?.split("-")[1] || ""; /* ligeledes her tager js fat 'date' fra API'et, 
                                                         men ved at bruge .split("-") deler den formatet (YYYY-MM-DD) op og kan dermed bruge [1] til at hente måneden.
                                                         skulle event.date evt. være undefined sikre ?. (optional chaining) at vi ikke får en fejl og erstattes med "" */
