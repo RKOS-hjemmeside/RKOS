@@ -30,15 +30,18 @@ import SolidButton from "./SolidButton.astro";
   document.addEventListener("DOMContentLoaded", () => {
     const burger = document.getElementById("burger");
     const nav = document.querySelector(".nav");
+    const header = document.querySelector("header");
+    let lastScrollTop = 0;
 
+    // Burger-menu toggle
     if (burger && nav) {
-      // At man kan klikke på burger ikonen, og så åbner den menu listen
       burger.addEventListener("click", () => {
         burger.classList.toggle("active");
         nav.classList.toggle("active");
       });
     }
 
+    // Highlight aktiv side
     // Hjælp af ChatGPT til at understrege den aktuelle side:
     // 1. Vi bruger 'window.location.pathname' til at finde den aktuelle side (path).
     // 2. Derefter sammenligner vi den med linkene i menuen.
@@ -52,6 +55,21 @@ import SolidButton from "./SolidButton.astro";
         link.classList.add("highlight");
       }
     });
+
+    // Scroll-hide menu
+    if (header) {
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.scrollY;
+
+        if (currentScroll > lastScrollTop) {
+          header.classList.add("hide-on-scroll");
+        } else {
+          header.classList.remove("hide-on-scroll");
+        }
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+      });
+    }
   });
 </script>
 
@@ -191,6 +209,11 @@ import SolidButton from "./SolidButton.astro";
 
     ul a {
       font-size: 1.2rem;
+    }
+
+    .hide-on-scroll {
+      transform: translateY(-100%);
+      transition: transform 0.8s ease;
     }
   }
 </style>
