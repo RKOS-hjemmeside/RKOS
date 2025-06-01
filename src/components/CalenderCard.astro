@@ -26,7 +26,6 @@ const { data } = Astro.props;
     <div class="buttons">
       <div class="button">
         <StrokeButton variant="black-red" text="Læs mere" page="hold" link={`/hold#${data.activity === "Fredags Træning" || data.activity === "Søndags Træning" ? "ekstra-training" : data.activity.toLowerCase().replaceAll(" ", "-").replaceAll("æ", "ae").replaceAll("ø", "oe").replaceAll("å", "aa")}`} />
-
         <!-- Linket bruger "activity" fra databasen til at finde den korrekte hold-variant (slug), som matcher HoldCard-komponentens 'hold' prop på hold-siden.
      For 'Fredags Træning' og 'Søndags Træning' konverteres det til 'ekstra-training'.
      Ellers omdannes activity-teksten til et id-venligt format (små bogstaver, bindestreger og uden danske specialtegn). -->
@@ -39,6 +38,29 @@ const { data } = Astro.props;
       </div>
     </div>
   </div>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      console.log("Script kører, DOM klar");
+
+      const rb = document.getElementById("rb");
+      const check = document.getElementById("check");
+
+      console.log("rb:", rb);
+      console.log("check:", check);
+
+      if (rb && check) {
+        rb.addEventListener("click", () => {
+          console.log("Klik på rb registreret");
+          rb.classList.add("noshow"); // Tilføjer 'noshow'
+          rb.classList.remove("active"); // Fjerner 'noshow'
+
+          check.classList.remove("noshow"); // Fjerner 'noshow'
+          check.classList.add("active"); // Tilføjer 'noshow'
+        });
+      }
+    });
+  </script>
 </article>
 
 <style>
@@ -113,26 +135,3 @@ const { data } = Astro.props;
     }
   }
 </style>
-
-<script>
-  window.addEventListener("DOMContentLoaded", () => {
-    console.log("Script kører, DOM klar");
-
-    const rb = document.getElementById("rb");
-    const check = document.getElementById("check");
-
-    console.log("rb:", rb);
-    console.log("check:", check);
-
-    if (rb && check) {
-      rb.addEventListener("click", () => {
-        console.log("Klik på rb registreret");
-        rb.classList.add("noshow"); // Tilføjer 'noshow'
-        rb.classList.remove("active"); // Fjerner 'noshow'
-
-        check.classList.remove("noshow"); // Fjerner 'noshow'
-        check.classList.add("active"); // Tilføjer 'noshow'
-      });
-    }
-  });
-</script>
