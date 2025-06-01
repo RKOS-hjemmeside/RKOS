@@ -46,7 +46,7 @@ import Map from "../components/Map.astro";
       <h2>Disciplin</h2>
       <p>Karate lærer os at holde fokus, vise respekt, yde vores bedste, også når det er hårdt. Disciplin er noget vi træner, og noget vi tager med os videre i livet.</p>
     </div>
-    <div class="value fælleskab">
+    <div class="value faellesskab">
       <h2>Fælleskab</h2>
       <p>Vi løfter hinanden uanset alder, niveau eller erfaring. Hos os er der plads til grin, kammeratskab og støtte, både på og af måtten.</p>
     </div>
@@ -103,26 +103,36 @@ import Map from "../components/Map.astro";
     padding: var(--m);
   }
 
+  .intro {
+    display: grid;
+    justify-content: center;
+  }
+
+  .intro p {
+    max-width: 71ch;
+  }
   .grid_1-1-1-1 {
     display: flex;
     text-align: center;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: var(--s);
-  }
-
-  .grid-item {
-    padding: 0 16px;
+    margin: var(--s) 0 var(--m);
+    gap: 6%;
   }
 
   .values-grid {
-    padding: var(--l);
+    padding: var(--s) var(--l) var(--m);
     display: grid;
     text-align: center;
   }
 
   .value {
     margin-bottom: 20px;
+  }
+
+  .value p {
+    max-width: 62ch;
+    margin: 0 auto;
   }
 
   .kanku-logo {
@@ -139,19 +149,14 @@ import Map from "../components/Map.astro";
   }
 
   .icon {
-    width: 50px;
-    height: 50px;
+    height: 110px;
+    object-fit: contain;
+    aspect-ratio: 1 / 1;
   }
 
   .red {
     color: var(--red700);
     font-weight: 500;
-  }
-
-  @media (min-width: 720px) {
-    .grid-item {
-      padding: 0 65px;
-    }
   }
 
   @media (min-width: 900px) {
@@ -173,7 +178,7 @@ import Map from "../components/Map.astro";
     .kanku-logo {
       width: 200px;
       height: 200px;
-      margin: 50px;
+      margin: 0 50px 59px 50px;
       grid-row: 2/3;
     }
 
@@ -182,14 +187,10 @@ import Map from "../components/Map.astro";
       grid-column: 2/3;
     }
 
-    .fælleskab,
+    .faellesskab,
     .osu {
       grid-row: 2/3;
-    }
-
-    .icon {
-      width: 126px;
-      height: 126px;
+      margin-top: 43px;
     }
   }
 </style>
