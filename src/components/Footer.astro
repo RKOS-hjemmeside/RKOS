@@ -169,13 +169,14 @@ import Logo from "./Logo.astro";
 
   @media (min-width: 900px) {
     footer {
-      grid-template-columns: 5fr 2fr 1fr 2fr;
+      grid-template-columns: 3.1fr 4fr 2fr 1fr;
       grid-template-rows: 1.5fr 1fr;
       padding: var(--M) var(--M) var(--L);
     }
 
     .intro-text {
       display: grid;
+      max-width: 38ch;
     }
 
     .form-container {
@@ -195,7 +196,7 @@ import Logo from "./Logo.astro";
       background-color: var(--spring-wood50);
       border: none;
       font-family: futura-pt, sans-serif;
-      font-size: 14px;
+      font-size: 16px;
       border-radius: 5px;
       padding: 15px;
       margin: 12px;
@@ -229,14 +230,11 @@ import Logo from "./Logo.astro";
       display: flex;
       flex-direction: row;
       gap: 30px;
+      white-space: nowrap;
     }
 
     .icon {
       width: 25px;
-    }
-
-    .nav {
-      margin-left: 39px;
     }
 
     .bottom {
@@ -252,6 +250,7 @@ import Logo from "./Logo.astro";
   /* fonts */
   h1 {
     font-size: 22px;
+    max-width: 18ch;
   }
 
   h2 {
@@ -281,7 +280,7 @@ import Logo from "./Logo.astro";
     font-size: 8px;
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 680px) {
     h1 {
       font-size: 38px;
     }
