@@ -6,36 +6,37 @@ const { data } = Astro.props;
 ---
 
 <article>
-  <img class="card-img" src={data.img} alt=`Billede af ${data.titel}` />
+  <img class="card-img" src={data?.img || "Data ikke fundet"} alt=`Billede af ${data.titel}` />
   <div class="info">
-    <h2>{data.activity}</h2>
+    <h2>{data?.activity || "Data ikke fundet"}</h2>
     <div class="event-info">
       <div class="icon-grid">
         <img class="icon" src="imgs/ikoner/date.svg" alt="Dato ikon" />
-        <p>{data.date}</p>
+        <p>{data?.date || "Data ikke fundet"}</p>
       </div>
       <div class="icon-grid">
         <img class="icon" src="imgs/ikoner/time.svg" alt="Tid ikon" />
-        <p>{data.start} - {data.end}</p>
+        <p>{data?.start || "Data ikke fundet"} - {data?.end || "Data ikke fundet"}</p>
       </div>
       <div class="icon-grid">
         <img class="icon" src="imgs/ikoner/location.svg" alt="Lokation ikon" />
-        <p>{data.location}</p>
+        <p>{data?.location || "Data ikke fundet"}</p>
       </div>
     </div>
     <div class="buttons">
       <div class="button">
-        <StrokeButton variant="black-red" text="Læs mere" page="hold" link={`/hold#${data.activity === "Fredags Træning" || data.activity === "Søndags Træning" ? "ekstra-training" : data.activity.toLowerCase().replaceAll(" ", "-").replaceAll("æ", "ae").replaceAll("ø", "oe").replaceAll("å", "aa")}`} />
+        <StrokeButton variant="black-red" text="Læs mere" page="hold" link={`/hold#${data?.activity === "Fredags Træning" || data?.activity === "Søndags Træning" ? "ekstra-training" : data?.activity?.toLowerCase()?.replaceAll(" ", "-")?.replaceAll("æ", "ae")?.replaceAll("ø", "oe")?.replaceAll("å", "aa") || "Data ikke fundet"}`} />
         <!-- Linket bruger "activity" fra databasen til at finde den korrekte hold-variant (slug), som matcher HoldCard-komponentens 'hold' prop på hold-siden.
      For 'Fredags Træning' og 'Søndags Træning' konverteres det til 'ekstra-training'.
      Ellers omdannes activity-teksten til et id-venligt format (små bogstaver, bindestreger og uden danske specialtegn). -->
       </div>
-      <div id="rb" class="active">
+      <div class="rb active">
         <SolidButton variant="red-black" text=`${data.book}` />
       </div>
-      <div id="check" class="noshow">
+      <div class="check noshow">
         <SolidButton variant="check" text="✓" />
       </div>
+      <!-- rb og check er class da #/id skal være unikt -->
     </div>
   </div>
 
@@ -43,22 +44,23 @@ const { data } = Astro.props;
     window.addEventListener("DOMContentLoaded", () => {
       console.log("Script kører, DOM klar");
 
-      const rb = document.getElementById("rb");
-      const check = document.getElementById("check");
+      // finder alle .rb knapper på siden
+      const rbButtons = document.querySelectorAll(".rb");
 
-      console.log("rb:", rb);
-      console.log("check:", check);
-
-      if (rb && check) {
+      rbButtons.forEach((rb) => {
         rb.addEventListener("click", () => {
-          console.log("Klik på rb registreret");
-          rb.classList.add("noshow"); // Tilføjer 'noshow'
-          rb.classList.remove("active"); // Fjerner 'noshow'
+          const card = rb.closest("article");
+          const check = card.querySelector(".check");
 
-          check.classList.remove("noshow"); // Fjerner 'noshow'
-          check.classList.add("active"); // Tilføjer 'noshow'
+          console.log("Klik på rb registreret");
+
+          rb.classList.add("noshow");
+          rb.classList.remove("active");
+
+          check.classList.remove("noshow");
+          check.classList.add("active");
         });
-      }
+      });
     });
   </script>
 </article>
