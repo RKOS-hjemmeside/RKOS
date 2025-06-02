@@ -1,5 +1,6 @@
 ---
 import Logo from "./Logo.astro";
+import SolidButton from "./SolidButton.astro";
 ---
 
 <footer>
@@ -17,7 +18,13 @@ import Logo from "./Logo.astro";
       <label for="email"></label>
       <input type="email" id="email" name="email" placeholder="Email" required />
 
-      <button type="submit" value="Submit">TILMED</button>
+      <div class="rb active">
+        <SolidButton variant="red-white" text="TILMED" />
+      </div>
+
+      <div class="check noshow">
+        <SolidButton variant="check-r" text="✓" />
+      </div>
     </form>
   </div>
 
@@ -89,6 +96,27 @@ import Logo from "./Logo.astro";
     <div class="line"></div>
     <p>© 2025 Roskilde Karate og Selvforsvar. Alle rettigheder forbeholdes.</p>
   </div>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      console.log("Script kører, DOM klar");
+
+      const rbButtons = document.querySelectorAll(".rb");
+
+      rbButtons.forEach((rb) => {
+        rb.addEventListener("click", () => {
+          const form = rb.closest("form");
+          const check = form.querySelector(".check");
+
+          rb.classList.add("noshow");
+          rb.classList.remove("active");
+
+          check.classList.remove("noshow");
+          check.classList.add("active");
+        });
+      });
+    });
+  </script>
 </footer>
 
 <style>
@@ -202,28 +230,18 @@ import Logo from "./Logo.astro";
       margin: 12px;
     }
 
-    button {
-      align-self: center;
-      background-color: var(--red700);
-      color: var(--spring-wood50);
-      border-radius: 10rem;
-      padding: 1rem;
-      display: block;
-      text-align: center;
+    .rb,
+    .check {
       width: 200px;
-      border: none;
-      cursor: pointer;
-      transition: 0.6s ease;
-      font-family: "oswald", sans-serif;
-      font-weight: 300;
-      font-size: 1rem;
-      margin-top: var(--s);
+      align-self: center;
+      padding-top: var(--s);
+    }
+    .active {
+      display: block;
     }
 
-    button:hover {
-      background-color: var(--spring-wood50);
-      color: var(--red700);
-      transition: 0.6s ease;
+    .noshow {
+      display: none;
     }
 
     .contact-info {
