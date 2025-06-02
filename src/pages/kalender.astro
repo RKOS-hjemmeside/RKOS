@@ -2,6 +2,7 @@
 import "../styles/general.css";
 import Layout from "../layouts/Layout.astro";
 import CalenderCard from "../components/CalenderCard.astro";
+import StrokeButton from "../components/StrokeButton.astro";
 
 const url = "https://rmnmiybwdlwyqkveaakh.supabase.co/rest/v1/kalender";
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJtbm1peWJ3ZGx3eXFrdmVhYWtoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc1NjcxMzIsImV4cCI6MjA2MzE0MzEzMn0.uOCnb23dVA36EYNtnoRazJJx5kXr0gPgv7CmXuAfbnk";
@@ -51,6 +52,10 @@ console.log("data", data);
     }
   </div>
 
+  <div class="up-button">
+    <StrokeButton variant="red-black" text="GÅ TIL TOPPEN" link="/kalender" page="Kalender" />
+  </div>
+
   <!-- Vi har fået hjælp af CHATgpt til at få script til at virke -->
   <!-- Vi havde problemer med at filtere i astro, da hvis man sætter js i ts bliver det renderet inden siden loader -->
   <!-- Dertil at skulle tilføje kode i linje 45 og 46 for at filter ville samarbejde med CalenderCard og så vi altdog får en gyldig værdi -->
@@ -91,7 +96,7 @@ console.log("data", data);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(157px, 1fr));
     gap: 10px;
-    margin: 0 var(--s) var(--m);
+    margin: 0 var(--s);
   }
 
   .filters {
@@ -126,9 +131,15 @@ console.log("data", data);
     font-weight: 200;
   } /*styling virker ikke firefox, men i gør i chrome*/
 
+  .up-button {
+    width: 200px;
+    margin: 30px auto;
+    margin-bottom: var(--m);
+  }
+
   @media (min-width: 900px) {
     .cards {
-      margin: 0 var(--S) var(--M);
+      margin: 0 var(--S);
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
@@ -146,6 +157,9 @@ console.log("data", data);
       font-family: futura-pt, sans-serif;
       font-size: 1rem;
       font-weight: 200;
+    }
+    .up-button {
+      width: 300px;
     }
   }
 </style>

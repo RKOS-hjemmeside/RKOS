@@ -16,7 +16,9 @@ const { data } = Astro.props;
       </div>
       <div class="icon-grid">
         <img class="icon" src="imgs/ikoner/time.svg" alt="Tid ikon" />
-        <p>{data?.start || "Data ikke fundet"} - {data?.end || "Data ikke fundet"}</p>
+        <p>
+          {data?.start?.slice(0, 5) || "Data ikke fundet"} - {data?.end?.slice(0, 5) || "Data ikke fundet"}
+        </p><!-- slice(0, 5) begrænser tegn til 5 tegn (ændre fra Supabases format: HH:MM:SS) -->
       </div>
       <div class="icon-grid">
         <img class="icon" src="imgs/ikoner/location.svg" alt="Lokation ikon" />
@@ -31,10 +33,10 @@ const { data } = Astro.props;
      Ellers omdannes activity-teksten til et id-venligt format (små bogstaver, bindestreger og uden danske specialtegn). -->
       </div>
       <div class="rb active">
-        <SolidButton variant="red-black" text=`${data.book}` />
+        <SolidButton variant="red-black" text=`${data?.book || "Data ikke fundet"}` />
       </div>
       <div class="check noshow">
-        <SolidButton variant="check" text="✓" />
+        <SolidButton variant="check-b" text="✓" />
       </div>
       <!-- rb og check er class da #/id skal være unikt -->
     </div>
@@ -51,8 +53,6 @@ const { data } = Astro.props;
         rb.addEventListener("click", () => {
           const card = rb.closest("article");
           const check = card.querySelector(".check");
-
-          console.log("Klik på rb registreret");
 
           rb.classList.add("noshow");
           rb.classList.remove("active");
@@ -71,6 +71,7 @@ const { data } = Astro.props;
     background-color: white;
     margin: 30px 0 10px 0;
     border-radius: 0 20px 20px 20px;
+    box-shadow: 0 4px 12px rgba(61, 61, 60, 0.2);
   }
 
   .card-img {

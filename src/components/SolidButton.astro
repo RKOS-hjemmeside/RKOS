@@ -66,19 +66,26 @@ const { link, text, variant, page } = Astro.props;
     color: var(--spring-wood50);
   }
 
-  .check {
+  .check-b {
     background-color: var(--mine-shaft950);
     border: solid var(--mine-shaft950);
     color: var(--spring-wood50);
     border-radius: 10rem;
   }
 
+  .check-r {
+    background-color: var(--spring-wood50);
+    border: solid var(--spring-wood50);
+    color: var(--red700);
+    border-radius: 10rem;
+  }
+
   /* scroll up/down button */
   .scroll-down {
-    width: 20px;
-    height: 20px;
-    font-size: 7px;
-    padding: 0;
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+    padding: 4px;
   }
 
   /** DESKTOP **/
@@ -95,9 +102,10 @@ const { link, text, variant, page } = Astro.props;
     }
 
     .scroll-down {
-      width: 50px;
-      height: 50px;
-      font-size: 30px;
+      width: 80px;
+      height: 80px;
+      font-size: 40px;
+      padding: 15px;
     }
   }
 </style>
