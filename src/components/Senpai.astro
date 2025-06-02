@@ -6,7 +6,7 @@ const { name, title, text1, text2, belt } = Astro.props;
   <img id="profil" src=`/imgs/${name}.webp` alt=`Billede af ${name}` />
 
   <div class="info">
-    <h2>{title} <b class="pil">⮟</b></h2>
+    <h2>{title} <b class="pil">↓</b></h2>
     <p>{text1}</p>
     <p>{text2}</p>
     <img id="belt" src=`/imgs/ikoner/${belt}.svg` alt="Ikon af trænerens karatebælte" />
@@ -27,8 +27,9 @@ const { name, title, text1, text2, belt } = Astro.props;
   .pil {
     color: var(--mine-shaft300);
     font-weight: 200;
-    font-size: small;
+    font-size: 1rem;
     margin-left: auto;
+    padding-bottom: 7px;
   }
   article {
     margin: var(--s);
@@ -76,6 +77,10 @@ const { name, title, text1, text2, belt } = Astro.props;
 
     p {
       font-size: 1.1rem;
+    }
+
+    .pil {
+      font-size: 1.5rem;
     }
   }
 </style>
