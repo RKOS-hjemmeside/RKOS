@@ -5,7 +5,6 @@ import Map from "../components/Map.astro";
 ---
 
 <Layout title="Om os" meta="Lær Roskilde Karate og Selvforsvar at kende, en klub for alle aldre og niveauer, med fokus på disciplin, fællesskab og styrke. Udforsk vores værdier, hold og træningsfilosofi.">
-  <!-- components -->
   <article class="hero-section">
     <video autoplay muted loop playsinline>
       <source src="/videos/om-os.mov" type="video/mp4" />
@@ -130,7 +129,7 @@ import Map from "../components/Map.astro";
       </div>
       <div class="grid-item">
         <!-- <img class="icon" src="imgs/ikoner/senpai.svg" alt="Senpai ikon" /> -->
-        <svg width="126" height="126" viewBox="0 0 126 126" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <svg class="icon" width="126" height="126" viewBox="0 0 126 126" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <rect width="126" height="126" transform="matrix(-1 0 0 1 126 0)" fill="url(#pattern0_292_4248)"></rect>
           <defs>
             <pattern id="pattern0_292_4248" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -209,9 +208,13 @@ import Map from "../components/Map.astro";
   }
 
   .icon {
-    height: 110px;
+    width: 100px;
+    height: 100px;
+    max-width: 100%;
     object-fit: contain;
     aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    display: block;
   }
 
   .red {
